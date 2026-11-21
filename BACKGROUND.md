@@ -65,7 +65,7 @@ The same physical theory can be written in different ways: different constraint 
 
 ## 4. Common pitfalls, and how this project handles them
 
-"The paper" below is the project's manuscript, written and frozen as a candidate but not yet public; see [paper/](paper/).
+"The paper" below is the project's paper, version 2; see [paper/](paper/).
 
 | Pitfall | Why it is a trap | How this project handles it |
 |---|---|---|
@@ -139,16 +139,16 @@ The documentation review of this page was selective. It was not an exhaustive ve
 - A. Krawczyk, K. A. Meissner, H. Nicolai, B. Sikorski, *Planck mass gravitinos in Einstein–Maxwell backgrounds*, Phys. Rev. D 114 (2026) 045013. [doi:10.1103/qpnl-91n5](https://doi.org/10.1103/qpnl-91n5)
 - H.-O. Kreiss, *Über die Stabilitätsdefinition für Differenzengleichungen die partielle Differentialgleichungen approximieren*, BIT 2 (1962) 153. [doi:10.1007/BF01957330](https://doi.org/10.1007/BF01957330)
 - G. Strang, *Necessary and insufficient conditions for well-posed Cauchy problems*, J. Differential Equations 2 (1966) 107. [doi:10.1016/0022-0396(66)90066-0](https://doi.org/10.1016/0022-0396(66)90066-0)
-- G. Strang, *On strong hyperbolicity*, Kyoto J. Math. 6(3) (1967). [doi:10.1215/kjm/1250524339](https://doi.org/10.1215/kjm/1250524339)
+- G. Strang, *On strong hyperbolicity*, J. Math. Kyoto Univ. 6(3) (1967) 397. [doi:10.1215/kjm/1250524339](https://doi.org/10.1215/kjm/1250524339)
 - V. Ya. Ivriĭ, V. M. Petkov, *Necessary conditions for the Cauchy problem for non-strictly hyperbolic equations to be well-posed*, Russian Math. Surveys 29 (1974) 1. [doi:10.1070/RM1974v029n05ABEH001295](https://doi.org/10.1070/RM1974v029n05ABEH001295)
 - G. Métivier, *L² well-posed Cauchy problems and symmetrizability of first order systems*, J. Éc. polytech. Math. 1 (2014) 39. [doi:10.5802/jep.3](https://doi.org/10.5802/jep.3)
 - S. Benzoni-Gavage, D. Serre, *Multi-dimensional Hyperbolic Partial Differential Equations*, Oxford University Press (2006). [doi:10.1093/acprof:oso/9780199211234.001.0001](https://doi.org/10.1093/acprof:oso/9780199211234.001.0001)
 - J. Rauch, *Hyperbolic Partial Differential Equations and Geometric Optics*, AMS Graduate Studies in Mathematics 133 (2012). [doi:10.1090/gsm/133](https://doi.org/10.1090/gsm/133)
 - C. Garetto, C. Jäh, M. Ruzhansky, *Hyperbolic systems with non-diagonalisable principal part and variable multiplicities, I: well-posedness*, Math. Ann. 372 (2018) 1597. [doi:10.1007/s00208-018-1672-1](https://doi.org/10.1007/s00208-018-1672-1)
-- F. Colombini, T. Nishitani, J. Rauch, *Weakly hyperbolic systems by symmetrization*, Ann. Sc. Norm. Super. Pisa Cl. Sci. (2019) 217. [doi:10.2422/2036-2145.201610_006](https://doi.org/10.2422/2036-2145.201610_006)
+- F. Colombini, T. Nishitani, J. Rauch, *Weakly hyperbolic systems by symmetrization*, Ann. Sc. Norm. Super. Pisa Cl. Sci. 19 (2019) 217. [doi:10.2422/2036-2145.201610_006](https://doi.org/10.2422/2036-2145.201610_006)
 - F. Abalos, O. Reula, *On necessary and sufficient conditions for strong hyperbolicity in systems with constraints*, Class. Quantum Grav. 37 (2020) 185012. [doi:10.1088/1361-6382/ab954c](https://doi.org/10.1088/1361-6382/ab954c)
 - J. F. Abalos, *On constraint preservation and strong hyperbolicity*, Class. Quantum Grav. 39 (2022) 215004. [doi:10.1088/1361-6382/ac88af](https://doi.org/10.1088/1361-6382/ac88af)
-- H.-O. Kreiss, O. E. Ortiz, *Some mathematical and numerical questions connected with first and second order time-dependent systems of partial differential equations*, in *The Conformal Structure of Space-Time*, Lecture Notes in Physics (Springer, 2002) 359–370. [doi:10.1007/3-540-45818-2_19](https://doi.org/10.1007/3-540-45818-2_19); [arXiv:gr-qc/0106085](https://arxiv.org/abs/gr-qc/0106085)
+- H.-O. Kreiss, O. E. Ortiz, *Some mathematical and numerical questions connected with first and second order time-dependent systems of partial differential equations*, in *The Conformal Structure of Space-Times: Geometry, Analysis, Numerics*, Lecture Notes in Physics 604 (Springer, 2002) 359–370. [doi:10.1007/3-540-45818-2_19](https://doi.org/10.1007/3-540-45818-2_19); [arXiv:gr-qc/0106085](https://arxiv.org/abs/gr-qc/0106085)
 - G. Nagy, O. E. Ortiz, O. A. Reula, *Strongly hyperbolic second order Einstein's evolution equations*, Phys. Rev. D 70 (2004) 044012. [doi:10.1103/PhysRevD.70.044012](https://doi.org/10.1103/PhysRevD.70.044012); [arXiv:gr-qc/0402123](https://arxiv.org/abs/gr-qc/0402123)
 - O. Sarbach, M. Tiglio, *Continuum and discrete initial-boundary value problems and Einstein's field equations*, Living Rev. Relativ. 15 (2012) 9. [doi:10.12942/lrr-2012-9](https://doi.org/10.12942/lrr-2012-9)
 - J. Kożuszek, T. Wiseman, *Well-posedness of minimal dRGT massive gravity*, [arXiv:2410.19491](https://arxiv.org/abs/2410.19491) (2024; v2 2026).

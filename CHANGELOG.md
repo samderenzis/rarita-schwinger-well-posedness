@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.0.9 (2026-11-21)
+Adds the paper. No code, data or results file changed.
+- New: `paper/` holds paper version 2, which is the release candidate after the ChatGPT review. It contains:
+  - `main.pdf` and its LaTeX source (`main.tex`, `refs.bib`, `build.sh`);
+  - `audit/num_audit.py`;
+  - `CHANGES_v2.md`;
+  - `FINAL_RELEASE_REPORT.md`;
+  - `VERSIONS.txt`.
+
+  The PDF builds reproducibly from this source. Its SHA-256 is in `SHA256SUMS` and `paper/README.md`.
+- The paper's data statement cites repository release v1.0.8 for the code and data. Those files are unchanged in this release.
+- README, ROADMAP, OUTLOOK, BACKGROUND and HOW_IT_WAS_CHECKED now point to the posted paper in place of the "frozen candidate, not yet public". HOW_IT_WAS_CHECKED has a new section on the version 2 release checks, which says who ran which check.
+- BACKGROUND references are aligned with the paper's bibliography:
+  - Strang (1967) under the journal's 1967 name, *J. Math. Kyoto Univ.*, with first page 397;
+  - the volume number for Colombini–Nishitani–Rauch;
+  - the full title and volume number of the Kreiss–Ortiz book (Lecture Notes in Physics 604).
+
 ## 1.0.8 (2026-11-21)
 Documentation only. No code, data or results file changed; the frozen paper candidate is untouched. Corrections follow the full AI review by ChatGPT of the frozen candidate and the archive (GEN33).
 - HOW_IT_WAS_CHECKED.md:

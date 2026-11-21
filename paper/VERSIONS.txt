@@ -1,0 +1,142 @@
+Versions and command outputs, paper version 2 release candidate (recorded 2026-11-21T21:44Z, Claude's workspace)
+python: Python 3.13.18 | sympy: 1.14.0
+pdflatex: pdfTeX 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian)
+bibtex: BibTeX 0.99d (TeX Live 2023/Debian)
+
+BUILD: ./build.sh (SOURCE_DATE_EPOCH=1795219200, FORCE_SOURCE_DATE=1, \pdftrailerid{})
+  errors: 0
+  warning$ -- 0
+  Pages:           27
+  log: 0 errors, 0 undefined references/citations/commands, 0 overfull boxes, 2 underfull boxes (bibliography URL line), 0 multiply-defined labels
+  reproducibility: two consecutive builds identical, main.pdf sha256 41522f919bed08719fa9ec16314162ad44c1155d3896dcb3f450a4c69adbe3f3
+
+NUMBER AUDIT: python3 audit/num_audit.py data/witness.json main.tex -> exit 0
+  PASS P 16x16, L 4x16
+  PASS r = |xi*| = 101/99
+  PASS xi* = (20/99,0,1,0)
+  PASS k*->xi* via b1=1,b2=1/3: k3=3
+  PASS charpoly = (x∓101/99)^6 (x∓101/198)^2
+  PASS dim ker (P-r)^j = 4,6,6 (got [4, 6, 6])
+  PASS rank L = 4
+  PASS Lv=0, Lw=0
+  PASS (P-r)v=0, (P-r)w=v, v!=0
+  PASS L L^† = 3|xi*|^2 I
+  PASS det S0 = 3063716808343140625/132101812606622109696
+  PASS param lambda^2=1/2
+  PASS param m^2=823/142944
+  PASS param pi_prime=1/2
+  PASS param b1=1
+  PASS param b2=1/3
+  PASS Table 2 rows 1-12 match witness.json (12 rows read)
+  PASS Table 2 rows 13-16 are zero
+  PASS (P - r) a_γ = -iγ v  (identity for a_γ)
+  ALL PASS
+
+CITATIONS:
+  bib entries: 33 cited: 33 missing: [] uncited: []
+
+EXACT-CHECK SCRIPTS (repository v1.0.8 files; review checks from the frozen candidate's review_checks/, run as LAMSIGN=+1/-1 variants):
+  === python3 read_witness.py (in data) exit=0 time=0s
+  L v = 0        True
+  L w = 0        True
+  (P - r) v = 0  True
+  (P - r) w = v  True
+  v != 0         True
+  ALL WITNESS RELATIONS HOLD
+  === python3 witness_min.py (in scripts) exit=0 time=1s
+  S^rho entries in Q(i) (sqrt(m), sqrt(lambda) cancelled): True
+  no Float atoms in G, X, S, P, L: True
+  det S0 = 3063716808343140625/132101812606622109696
+  L L^dag == 3|xi|^2 I: True
+  L v == 0: True | L w == 0: True
+  (P - r) v == 0: True | (P - r) w == v: True | v != 0: True
+  L a_gamma == 0: True | (gamma - i(P-r)) a_gamma == -i gamma^2 w: True
+  sympy 1.14.0
+  === python3 -u check_1_clifford_intertwining.py (in scripts) exit=0 time=1s
+  Clifford {G^A,G^B} = 2 eta^{AB}: True
+  intertwining (general F, symbolic m, lam): True
+  === python3 -u check_2_geometry.py (in scripts) exit=0 time=2s
+  Levi-Civita frame connection: True
+  spin connection convention: True
+  dA = F (frame components 12, 34): True
+  witness S^rho in M4(Q(i)), no Float: True
+  zero-test statistics: {'entries': 427, 'zero_after_expand': 423, 'zero_after_cot_rewrite': 4, 'zero_after_reduction': 0, 'nonzero': 0}
+  trig atoms in raw residuals: ['cos(th1)', 'cos(th2)', 'cot(th1)', 'cot(th2)', 'sin(th1)', 'sin(th2)']
+  denominators cleared in step 2: none (step 2 not needed)
+  === python3 -u check_3_divergence_identity.py (in scripts) exit=0 time=6s
+  no Float atoms: True
+  DI on Model E (arbitrary psi, symbolic parameters): True
+  zero-test statistics: {'entries': 4, 'zero_after_expand': 0, 'zero_after_cot_rewrite': 4, 'zero_after_reduction': 0, 'nonzero': 0}
+  trig atoms in raw residuals: ['cos(th1)', 'cos(th2)', 'cot(th1)', 'cot(th2)', 'sin(th1)', 'sin(th2)']
+  denominators cleared in step 2: none (step 2 not needed)
+  === python3 -u check_4_constraint_intertwining.py (in scripts) exit=0 time=45s
+  Ktilde free of d/dt: True
+  CI (arbitrary psi_0, Phi; symbolic parameters): True
+  zero-test statistics: {'entries': 4, 'zero_after_expand': 0, 'zero_after_cot_rewrite': 4, 'zero_after_reduction': 0, 'nonzero': 0}
+  trig atoms in raw residuals: ['cos(th1)', 'cos(th2)', 'cot(th1)', 'cot(th2)', 'sin(th1)', 'sin(th2)']
+  denominators cleared in step 2: none (step 2 not needed)
+  === python3 -u check_5_principal_symbol.py (in scripts) exit=0 time=3s
+  no Float atoms: True
+  degree in Lam <= 1: True
+  principal symbol of curved K' at y0 == i P(xi*): True
+  === python3 rc_1.py (in audit) exit=0 time=2s
+  item2  P - P|_{pi'=0} == pi' M^{-1} T L : True
+  item2  chain holds for symbolic pi'      : True True True True
+  item4  L P == C1 L at xi* (symbolic pi') : True
+  item4  L P == C1 L at 3 random rational xi: True
+  === python3 rc_-1.py (in audit) exit=0 time=2s
+  item2  P - P|_{pi'=0} == pi' M^{-1} T L : True
+  item2  chain holds for symbolic pi'      : True True True True
+  item4  L P == C1 L at xi* (symbolic pi') : True
+  item4  L P == C1 L at 3 random rational xi: True
+  === python3 charpoly_pip.py (in audit) exit=0 time=1s
+  charpoly(P_pi') == (x^2-r^2)^6 (x^2-(pi' r)^2)^2 : True
+  === python3 sign_cmp.py (in audit) exit=0 time=1s
+  P(+lam) == P(-lam): True
+  S^rho equal: True
+  det S0 (-lam): 3063716808343140625/132101812606622109696
+  golden-output comparison: check_1..check_5 and witness_min outputs contain every line of results/golden_outputs.txt; no output line contains False
+
+HASHES: main.tex 517c74709c802f2e94b95baf7378912fc08216c0ac37778e80efbe0007cc45db | refs.bib 278218f478a50d203b301685e471a30d319b356132110e466d58894777139985 | main.pdf 41522f919bed08719fa9ec16314162ad44c1155d3896dcb3f450a4c69adbe3f3
+
+==================================================================
+SECOND ISSUE OF THE RELEASE CANDIDATE (recorded 2026-11-21T21:53Z)
+Change: FINAL_RELEASE_REPORT.md wording (sections A, E, F, G, H, I) and the CHANGES_v2.md diff note. No source change.
+python: Python 3.13.18 | sympy: 1.14.0 | pdfTeX 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) | BibTeX 0.99d (TeX Live 2023/Debian)
+
+  == cp main.tex refs.bib build.sh -> clean dir; bash build.sh
+  exit 0
+  0
+  overfull: 0  underfull: 2  errors: 0
+  warning$ -- 0
+  Pages:           27
+  41522f919bed08719fa9ec16314162ad44c1155d3896dcb3f450a4c69adbe3f3  main.pdf
+  REBUILT PDF IDENTICAL TO PACKAGED main.pdf
+
+  PASS (P - r) a_γ = -iγ v  (identity for a_γ)
+  ALL PASS
+  exit 0
+  PASS assertions: 19
+
+  == pdftotext main.pdf | grep Strang
+  [19] Gilbert Strang. On Strong Hyperbolicity. Journal of Mathematics of Kyoto University, 6
+  (3):397–417, 1967. doi: 10.1215/kjm/1250524339.
+
+  == citation check
+  entries: 33 cited: 33 missing: [] uncited: [] nocite*: False
+
+== exact-check scripts, run from a fresh clone of the public repository:
+  data/read_witness.py exit=0 False-lines=0
+  scripts/witness_min.py exit=0 False-lines=0
+  scripts/check_1_clifford_intertwining.py exit=0 False-lines=0
+  scripts/check_2_geometry.py exit=0 False-lines=0
+  scripts/check_3_divergence_identity.py exit=0 False-lines=0
+  scripts/check_4_constraint_intertwining.py exit=0 False-lines=0
+  scripts/check_5_principal_symbol.py exit=0 False-lines=0
+  MISSING: Expected stdout of each script in scripts/ (the final 'sympy x.y.z' line of witness_min.py is omitted).
+  MISSING: Verified identical on Claude's machine and in ChatGPT's external re-execution (2026-11-20).
+  golden lines missing: 2 (results/golden_outputs.txt, 37 non-empty lines)
+  repo commit: 554eedb069a6518f0f6f463c345971540e26371b (tag v1.0.8)
+  note: the 2 'missing' lines are the header description of golden_outputs.txt, not script output; all 35 output lines are present.
+
+HASHES (unchanged from the first issue): main.tex 517c74709c802f2e94b95baf7378912fc08216c0ac37778e80efbe0007cc45db | refs.bib 278218f478a50d203b301685e471a30d319b356132110e466d58894777139985 | main.pdf 41522f919bed08719fa9ec16314162ad44c1155d3896dcb3f450a4c69adbe3f3

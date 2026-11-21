@@ -2,7 +2,7 @@
 
 **Exact algebraic witness and full verification suite for a well-posedness obstruction in charged, Pauli-coupled Rarita–Schwinger fields on ℝ×S²×S².**
 
-![Status](https://img.shields.io/badge/status-paper_under_review_·_not_peer_reviewed-orange?style=flat-square)
+![Status](https://img.shields.io/badge/status-paper_v2_posted_·_not_peer_reviewed-orange?style=flat-square)
 ![Validation](https://img.shields.io/badge/validation-COMPLETE__PASS-brightgreen?style=flat-square)
 ![Code license](https://img.shields.io/badge/code-MIT-blue?style=flat-square)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.24413648-blue?style=flat-square)](https://doi.org/10.5281/zenodo.24413648)
@@ -18,7 +18,7 @@ For a charged, massive spin-3/2 (Rarita–Schwinger) field with Pauli coupling, 
 
 **New to the topic?** Start with [In plain terms](#in-plain-terms), then [BACKGROUND.md](BACKGROUND.md). **Specialist?** Jump to [the argument in more detail](#for-specialists-the-argument-in-more-detail) or [check the witness in one command](#check-it-yourself).
 
-📄 **Paper:** written; a frozen candidate is under review and will be posted here afterwards · 🔖 **DOI:** [10.5281/zenodo.24413648](https://doi.org/10.5281/zenodo.24413648)
+📄 **Paper:** [version 2 (PDF)](paper/main.pdf), with its [LaTeX source](paper/) · AI-reviewed only, not peer reviewed · 🔖 **DOI:** [10.5281/zenodo.24413648](https://doi.org/10.5281/zenodo.24413648)
 
 ## In plain terms
 
@@ -43,7 +43,7 @@ The tools come from the theory of hyperbolic equations. Necessary conditions of 
 >
 > The cones are shrinking geodesic balls B_d(y₀, R − ct), with an arbitrary speed c > 0; they are not identified with physical light cones.
 
-The precise statement, definitions and the full written proof will be in the paper, which is written and under review. Until then, this repository holds the exact witness and every computation the proof relies on.
+The precise statement, definitions and the full written proof are in the [paper](paper/main.pdf) (version 2). This repository also holds the exact witness and every computation the proof relies on.
 
 ## The witness
 
@@ -191,7 +191,7 @@ This is **AI-collaborative research**. The project owner defined the programme, 
 - ⚠️ The proof has **not yet been reviewed by a human expert**, is **not formally machine-verified** (a Lean formalisation of the witness algebra is planned), and has **not been independently replicated**: every check, including the re-executions, used this project's own code and data.
 - ⚠️ The scope is narrow: one background, one parameter point, the Pauli slice. It rules out the three properties *together* and does not say which one fails. It makes no physical claims.
 
-The paper has had a manuscript-level review by Perplexity; what that review did and did not cover is in [HOW_IT_WAS_CHECKED.md](HOW_IT_WAS_CHECKED.md#review-of-the-paper-2026-11-21).
+The paper has had a manuscript-level review by Perplexity and a full AI review by ChatGPT, including its code and archive. What those reviews did and did not cover is in [HOW_IT_WAS_CHECKED.md](HOW_IT_WAS_CHECKED.md#review-of-the-paper-2026-11-21). Neither is human expert review.
 
 Feedback, especially from specialists in hyperbolic PDE and higher-spin fields, is very welcome.
 
@@ -230,7 +230,7 @@ Each reference is checked automatically by the validator (check G1): the DOI res
 | [`data/`](data/) | `witness.txt` (readable), `witness.json` (exact, machine-readable), `read_witness.py` (checker using only Python's standard library) |
 | [`scripts/`](scripts/) | shared definitions, `witness_min.py` and `check_1` … `check_5` (the exact-check computations); `outlook_checks.py` (the checks behind OUTLOOK.md, not part of the proof) |
 | [`results/`](results/) | the owner's full-archive runs (v1.7, v1.4) and the public repository run (JSON, CSV); the expected output of every script |
-| [`paper/`](paper/) | the manuscript (PDF and LaTeX source), when released |
+| [`paper/`](paper/) | the paper, version 2: PDF, LaTeX source, bibliography, build script, number audit, change log and release report |
 | [`bhmap_validate_v1_7.py`](bhmap_validate_v1_7.py) | the validation suite (36 checks) |
 | [`HOW_IT_WAS_CHECKED.md`](HOW_IT_WAS_CHECKED.md) | verification method and provenance, in brief |
 | [`RUNNING_THE_VALIDATOR.md`](RUNNING_THE_VALIDATOR.md) | how to run the validator, its options, and how to read the result |

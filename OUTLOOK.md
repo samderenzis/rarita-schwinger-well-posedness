@@ -7,7 +7,7 @@
 > - **C. Physical interpretations**: kept separate from the algebra, with their limits stated.
 >
 > Every item carries a status label:
-> - **[PAPER]**: proved in the paper (frozen candidate, not yet public). Like the rest of the project, it is AI-checked only.
+> - **[PAPER]**: proved in the paper (version 2, in [paper/](paper/)). Like the rest of the project, it is AI-checked only.
 > - **[PROJECT RECORD]**: an earlier internal result of this project, with the status recorded there. The records are in the project's private archive and will be included in the planned full review.
 > - **[NEW · exact · unaudited]**: an exact computation checked by [`scripts/outlook_checks.py`](scripts/outlook_checks.py) (sympy only, under a minute). It is project code and has not been reviewed by anyone else.
 > - **[CONJECTURE]**: a precise statement that is not proved.

@@ -1,6 +1,6 @@
 # Roadmap: how this work could be extended
 
-> **What this page is.** A research plan, not a set of results. The [README](README.md) states what is established, and [OUTLOOK.md](OUTLOOK.md) collects conjectures and interpretations. This page says what to do next, in what order, and how each step would be judged. Nothing here changes the frozen paper candidate or the status of the theorem. Extensions will be recorded separately as they happen.
+> **What this page is.** A research plan, not a set of results. The [README](README.md) states what is established, and [OUTLOOK.md](OUTLOOK.md) collects conjectures and interpretations. This page says what to do next, in what order, and how each step would be judged. Nothing here changes the paper or the status of the theorem. Extensions will be recorded separately as they happen.
 >
 > Adapted from a planning suggestion by Perplexity (2026-11-21), with references to this project's existing scripts and records added by Claude, and revised after Perplexity's review of the draft. It is adopted as the working plan.
 
@@ -53,10 +53,10 @@ Before substantial extensions, the frozen result should be reviewed and reproduc
 | constrained necessity lemma | paper §4, Appendix B |
 | explicit witness | `data/witness.json`, `data/witness.txt`, `data/read_witness.py` |
 | minimal reproduction | [Check it yourself](README.md#check-it-yourself), [RUNNING_THE_VALIDATOR.md](RUNNING_THE_VALIDATOR.md) |
-| dependency versions and checksums | `SHA256SUMS`; tool versions recorded with the frozen paper |
+| dependency versions and checksums | `SHA256SUMS`; tool versions in `paper/VERSIONS.txt` |
 | which claim each script checks | paper Appendix A, Table 3 |
 
-**Still to do:** post the paper once the planned ChatGPT review is complete, and invite human expert review.
+**Done:** the paper (version 2) is posted in [paper/](paper/) after the ChatGPT review. **Still to do:** invite human expert review.
 
 **Deliverable:** a reproducible foundation with a documented review status.
 
@@ -244,7 +244,7 @@ Keep these distinct, because none follows automatically from another:
 
 ## How progress will be recorded
 
-- The frozen paper candidate is not changed. Any later correction goes into a new version with a change log.
+- A posted paper version is not changed. Any later correction goes into a new version with a change log.
 - Each extension gets its own record, with its evidence label from the table above, in this repository's CHANGELOG and the project archive.
 - Each claim keeps its scope, evidence and review status recorded separately. Broader conclusions need new mathematical arguments; review assesses those arguments but does not widen their scope.
 

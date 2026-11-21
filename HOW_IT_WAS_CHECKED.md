@@ -49,11 +49,11 @@ All of these checks use this project's own code and data. Re-execution by a seco
 
 ## Review of the paper (2026-11-21)
 
-The paper (written; not yet posted) was reviewed by Perplexity at the manuscript level: 12 items, two rounds of follow-up, and a final reading of the frozen candidate PDF. Every item was addressed. Of the reviewer's points, one was a misreading that the reviewer withdrew; the others led to clarifications, narrower wording, two notation and dimension corrections, and one new result (the witness is the same for every value of the constraint-addition parameter π′).
+The paper (written, and not yet posted at the time) was reviewed by Perplexity at the manuscript level: 12 items, two rounds of follow-up, and a final reading of the frozen candidate PDF. Every item was addressed. Of the reviewer's points, one was a misreading that the reviewer withdrew; the others led to clarifications, narrower wording, two notation and dimension corrections, and one new result (the witness is the same for every value of the constraint-addition parameter π′).
 
 In the reviewer's own words: "The frozen candidate PDF was inspected, and the reported manuscript corrections were confirmed in the document. The specific objections raised during this review were addressed. The associated source code, computational certificates, archive integrity, and complete mathematical proof were not independently verified in this review."
 
-It is not independent replication, not execution of the verification suite, not certification of the theorem, and not human expert review. A further review by ChatGPT of the paper, code, data, OUTLOOK and archive together is planned; its outcome is not presumed.
+It is not independent replication, not execution of the verification suite, not certification of the theorem, and not human expert review. A further review by ChatGPT of the paper, code, data, OUTLOOK and archive together followed; it is described in the next section.
 
 ## Full AI review by ChatGPT (2026-11-21)
 
@@ -84,7 +84,24 @@ All of these passed.
   - the validator's scope wording;
   - "proof-carrying" for scripts that are exact checks, not formal proofs.
 - One premise missing from an internal project record (GEN9 Proposition L5.1). It does not affect the witness.
-- Bibliographic metadata to complete in a later paper version.
+- Bibliographic metadata to complete in a later paper version (done in paper version 2).
 
 **Its scope, in its own terms:** this is an AI review, not human expert review, certification or independent replication. The checks re-ran the project's own code, data and conventions. Its overall verdict: the result is a specific, model-dependent mathematical theorem with an exact witness. Which property fails, other parameter points, formulation independence, causality and physical interpretation are not established.
+
+## Paper version 2 and its release checks (2026-11-21)
+
+Paper version 2 adds the corrections from the reviews above: wording, two added references, completed bibliographic metadata, and a description of the reviews in Appendix C. No theorem, proof, witness or number changed. Its change log and release report are in [paper/](paper/).
+
+**Claude** ran the release checks:
+- the LaTeX/BibTeX build: no errors, 27 pages;
+- a reproducible build, in which a rebuild from the packaged source gives an identical PDF;
+- the 19-item number audit;
+- the citation check, 33 of 33 references cited;
+- the exact-check scripts, run from this repository's v1.0.8 files.
+
+All passed.
+
+**ChatGPT** independently checked the release candidate archive: its checksums, the bibliography correction, and the number audit. All passed. It did **not** re-run the LaTeX build, because BibTeX was not available in its environment.
+
+Both are AI systems working from this project's own files. This is not human expert review and not independent replication.
 
