@@ -3,7 +3,7 @@
 This result was produced by **AI-collaborative research**. The project owner (Sam DeRenzis) defined the programme, set the rules and ran the verification. Three AI systems took separate roles:
 - **Claude** (Anthropic): implementer.
 - **ChatGPT** (OpenAI): auditor and deriver.
-- **Perplexity**: used by the owner, as needed, for literature searches and independent physics cross-checks.
+- **Perplexity**: used by the owner, as needed, for literature searches and physics cross-checks, and, for the paper, a manuscript review (see below).
 
 Nothing here has been reviewed by a human expert.
 
@@ -33,7 +33,7 @@ The first version of the validation suite (v1.0) was reviewed by ChatGPT. That r
 - the witness in three different arithmetic engines (SymPy, FLINT, pure-Python fractions);
 - representation independence, including dense non-unitary basis changes;
 - the operator identities evaluated to 60 digits;
-- numerical attacks on the key inequality (Lemma 4.1);
+- numerical attacks on the key inequality (the paper's Lemma 4.5; the validator calls it "Lemma 4.1", following an earlier draft);
 - geometry;
 - every citation;
 - mutation tests proving the checks can fail.
@@ -46,3 +46,12 @@ All of these checks use this project's own code and data. Re-execution by a seco
 - Review by a human expert in hyperbolic PDE or higher-spin fields.
 - Formal verification. A Lean check of the witness algebra is planned.
 - The open research questions: other parameter values, off the Pauli slice, and a local-domain version of the H⁻¹ estimate.
+
+## Review of the paper (2026-11-21)
+
+The paper (written; not yet posted) was reviewed by Perplexity at the manuscript level: 12 items, two rounds of follow-up, and a final reading of the frozen candidate PDF. Every item was addressed. Of the reviewer's points, one was a misreading that the reviewer withdrew; the others led to clarifications, narrower wording, two notation and dimension corrections, and one new result (the witness is the same for every value of the constraint-addition parameter π′).
+
+In the reviewer's own words: "The frozen candidate PDF was inspected, and the reported manuscript corrections were confirmed in the document. The specific objections raised during this review were addressed. The associated source code, computational certificates, archive integrity, and complete mathematical proof were not independently verified in this review."
+
+It is not independent replication, not execution of the verification suite, not certification of the theorem, and not human expert review. A further review by ChatGPT of the paper, code, data, OUTLOOK and archive together is planned; its outcome is not presumed.
+

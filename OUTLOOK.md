@@ -6,12 +6,14 @@
 > - **[NEW · exact · unaudited]**: an exact computation made on 2026-11-21 for this page. Run it yourself with `python scripts/outlook_checks.py` (sympy only, a few seconds). It is not part of the proof and has not been reviewed by anyone else.
 > - **[CONJECTURE]**: a precise guess that a computation or proof could settle.
 > - **[SPECULATION]**: an interpretation or analogy, offered to start a conversation.
+>
+> **Scope.** Everything on this page labelled NEW, CONJECTURE or SPECULATION is an **additional claim outside the main theorem**. It is not part of the paper's proof. It was not assessed in the review of the paper, and it is supported only by this project's own script `scripts/outlook_checks.py`. A later review is planned to examine this page and the script directly.
 
 ---
 
 ## 1. The obstruction sits where a faster-than-light sheet meets the light cone
 
-This is the most striking thing on this page, and the main reason it was written.
+This is the most striking thing on this page, and the main reason it was written. It is an additional claim, separate from the main theorem: the theorem uses only the Jordan chain, and does not depend on anything in this section. "Light speed" here means speed 1 in the orthonormal frame of the background; the theorem's own cones have arbitrary speed c and are not light cones.
 
 **What the computation shows** [NEW · exact · unaudited]. At the witness parameters, take the principal symbol P(ξ) of the reduced system for a unit covector. Light speed is 1 in the orthonormal frame. Its characteristic speeds are then exact:
 
@@ -56,8 +58,8 @@ The theorem rules out all three *together*. Systems whose principal symbol has r
 
 A fair challenge to any ill-posedness result is that another formulation might avoid it. Numerical relativity escaped ADM's weak hyperbolicity by reformulating, with BSSN and generalised harmonic gauge.
 
-- **[NEW · exact · unaudited]** The formulation here has a free constraint-addition parameter π′. Adding multiples of the constraint is the standard trick for repairing hyperbolicity. At ξ\*, the principal symbol **restricted to ker L** is identical for every π′ tested (0, 1/2, 2, −3/7), and the Jordan chain survives each time. The project's notes record the same independence in general (supported by computation, not proved).
-- **[CONJECTURE C].** No constraint addition of this type removes the obstruction, because it lives entirely on constraint-satisfying directions, where constraint addition acts trivially.
+- **[ESTABLISHED in the paper, this family only]** The formulation here has a free constraint-addition parameter π′. Adding multiples of the constraint is the standard trick for repairing hyperbolicity. The paper (frozen candidate, Proposition 5.1) proves P_{π′} − P_{π″} = (π′ − π″)M⁻¹TL, which vanishes on ker L, so the principal symbol restricted to ker L, and the Jordan chain, are the same for every π′. This was first seen here for the tested values 0, 1/2, 2 and −3/7. It is independence within this one family of constraint additions, not formulation independence in general.
+- **[CONJECTURE C, now settled for this family]** No constraint addition of this type removes the obstruction, because it lives entirely on constraint-satisfying directions, where constraint addition acts trivially. For the π′ family this is the result just stated. Other kinds of reformulation remain open.
 - **[SPECULATION]** Reformulations that change the *field content* are a different matter: auxiliary fields, as in Porrati–Rahman, or Stückelberg fields. Section 5 comes back to this.
 
 ## 4. How special is the witness point?

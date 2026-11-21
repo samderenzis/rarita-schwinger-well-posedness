@@ -30,7 +30,7 @@ A progress line is printed every minute. Each check prints one line when it fini
 |---|---|---|
 | `--level quick` | Fewer random trials. A smoke test. | First run, or a slow computer |
 | `--level standard` | The normal run. About 3 minutes on a 12-core desktop; longer on smaller machines. | Most people |
-| `--level deep` | Many more random trials and larger stress tests. Considerably longer. | A thorough independent re-check |
+| `--level deep` | Many more random trials and larger stress tests. Considerably longer. | A more thorough re-check |
 | `--online` | Also checks every cited DOI (Crossref, doi.org) and arXiv identifier (arXiv API). Needs internet. | Include it for a complete run: without it, G1 and G2 are skipped |
 | `--mailto you@example.com` | Identifies you to Crossref, which makes its lookups faster and more reliable. | Optional, with `--online` |
 | `--workers N` | Number of checks run in parallel (default: the smaller of 8 and your CPU count). | Lower it if memory runs short, especially with `--level deep` (try 4) |
