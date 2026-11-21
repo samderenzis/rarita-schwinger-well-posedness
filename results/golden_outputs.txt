@@ -1,0 +1,44 @@
+Expected stdout of each script in scripts/ (the final 'sympy x.y.z' line of witness_min.py is omitted).
+Verified identical on Claude's machine and in ChatGPT's external re-execution (2026-11-20).
+
+=== check_1_clifford_intertwining.py
+Clifford {G^A,G^B} = 2 eta^{AB}: True
+intertwining (general F, symbolic m, lam): True
+
+=== check_2_geometry.py
+Levi-Civita frame connection: True
+spin connection convention: True
+dA = F (frame components 12, 34): True
+witness S^rho in M4(Q(i)), no Float: True
+zero-test statistics: {'entries': 427, 'zero_after_expand': 423, 'zero_after_cot_rewrite': 4, 'zero_after_reduction': 0, 'nonzero': 0}
+trig atoms in raw residuals: ['cos(th1)', 'cos(th2)', 'cot(th1)', 'cot(th2)', 'sin(th1)', 'sin(th2)']
+denominators cleared in step 2: none (step 2 not needed)
+
+=== check_3_divergence_identity.py
+no Float atoms: True
+DI on Model E (arbitrary psi, symbolic parameters): True
+zero-test statistics: {'entries': 4, 'zero_after_expand': 0, 'zero_after_cot_rewrite': 4, 'zero_after_reduction': 0, 'nonzero': 0}
+trig atoms in raw residuals: ['cos(th1)', 'cos(th2)', 'cot(th1)', 'cot(th2)', 'sin(th1)', 'sin(th2)']
+denominators cleared in step 2: none (step 2 not needed)
+
+=== check_4_constraint_intertwining.py
+Ktilde free of d/dt: True
+CI (arbitrary psi_0, Phi; symbolic parameters): True
+zero-test statistics: {'entries': 4, 'zero_after_expand': 0, 'zero_after_cot_rewrite': 4, 'zero_after_reduction': 0, 'nonzero': 0}
+trig atoms in raw residuals: ['cos(th1)', 'cos(th2)', 'cot(th1)', 'cot(th2)', 'sin(th1)', 'sin(th2)']
+denominators cleared in step 2: none (step 2 not needed)
+
+=== check_5_principal_symbol.py
+no Float atoms: True
+degree in Lam <= 1: True
+principal symbol of curved K' at y0 == i P(xi*): True
+
+=== witness_min.py
+S^rho entries in Q(i) (sqrt(m), sqrt(lambda) cancelled): True
+no Float atoms in G, X, S, P, L: True
+det S0 = 3063716808343140625/132101812606622109696
+L L^dag == 3|xi|^2 I: True
+L v == 0: True | L w == 0: True
+(P - r) v == 0: True | (P - r) w == v: True | v != 0: True
+L a_gamma == 0: True | (gamma - i(P-r)) a_gamma == -i gamma^2 w: True
+

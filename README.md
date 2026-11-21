@@ -42,7 +42,10 @@ The exact v, w, P, L and det S⁰ = 3063716808343140625 / 132101812606622109696 
 
 Three levels, from no software at all to full re-computation:
 
-1. **Read the certificate.** Open the files in [`data/`](data/) and verify the four witness relations above by hand or with any computer algebra system.
+1. **Read the certificate.** Open [`data/witness.txt`](data/witness.txt) and verify the four witness relations above by hand or with any computer algebra system. Or run the standard-library-only checker (no installs needed):
+   ```bash
+   python data/read_witness.py      # uses only Python's built-in fractions module
+   ```
 2. **Run the proof scripts** (a few minutes):
    ```bash
    pip install sympy
@@ -54,11 +57,11 @@ Three levels, from no software at all to full re-computation:
 3. **Run the full validation suite** (5–30 minutes depending on level):
    ```bash
    pip install sympy numpy scipy mpmath python-flint requests
-   python bhmap_validate_v1_4.py --level standard --workers 4
+   python bhmap_validate_v1_5.py --level standard --online
    ```
-   Use `--level deep` for the full stress test (about 30 minutes on a 12-core desktop).
+   Run it from the repository folder: it detects the repository automatically. Use `--level deep` for the full stress test (about 30 minutes on a 12-core desktop); `--online` adds the citation checks (Crossref, arXiv). A complete run ends with `VERDICT: COMPLETE_PASS`.
 
-   **Note:** the archive-integrity (A) and citation (G) checks need the project's full private archive, so in this repository they are reported as `SKIP` and the verdict is `PARTIAL_PASS`. All mathematical checks (B–F, H) run in full. The owner's complete run, with the archive, is in [`results/`](results/).
+   In this repository the archive checks verify the repository itself (every file against `SHA256SUMS`, the pinned scripts, and `data/witness.json` against a fresh recomputation). Three checks that need the project's private working archive (A2, A3, A5) are reported as **NA** (not applicable), listed, and never counted as passes. The owner's full-archive run is in [`results/`](results/).
 
 ## What the validation covers
 
@@ -71,13 +74,13 @@ Three levels, from no software at all to full re-computation:
 | **E** Analysis | the key oscillatory H⁻¹ inequality (Lemma 4.1), coercivity constants, ball geometry | numerical falsification incl. an adversarial optimiser (worst ratio ≈ 0.50, limit 1) |
 | **F** Logic | finite-dimensional models of the abstract argument | illustration only |
 | **G** Literature | every cited DOI and arXiv identifier exists and matches | Crossref and arXiv APIs |
-| **H** Self-tests | deliberately corrupted inputs must be caught | 19 mutation tests |
+| **H** Self-tests | deliberately corrupted inputs must be caught | mutation tests of the checks themselves |
 
-**Owner's deep run (Ryzen 9 9900X):** `COMPLETE_PASS`, 34 PASS + 1 INFO, all 35 checks. Results JSON sha256 `ec5b8f290de0e151ae8bdd829ec68982f1c6f5e310c9bbfd8d39009b0b91b1ce`.
+**Owner's deep run (Ryzen 9 9900X, full private archive, validator v1.4):** `COMPLETE_PASS`, 34 PASS + 1 INFO, all 35 checks. The published copy in `results/` has local paths and private-archive file listings removed; statuses and measurements are unchanged, and the hash of the unmodified original (`ec5b8f29…b1ce`) is recorded inside it. v1.5 adds repository mode and one check (A7).
 
 ## How this work was produced, and its status
 
-This is **AI-collaborative research**. The project owner defined the programme, directed the work and ran the verification. Two AI systems (Claude and ChatGPT) acted as implementer and independent auditor. Key lemmas were tested by statement-only blind derivations with hash-frozen records, every interface of the proof chain was audited, all computations were externally re-executed, and every failed attempt and correction was kept on record.
+This is **AI-collaborative research**. The project owner defined the programme, directed the work and ran the verification. Two AI systems (Claude and ChatGPT) acted as implementer and independent auditor, and the owner used Perplexity as needed for literature searches and physics cross-checks. Key lemmas were tested by statement-only blind derivations with hash-frozen records, every interface of the proof chain was audited, all computations were externally re-executed, and every failed attempt and correction was kept on record.
 
 **What this does and does not establish:**
 - ✅ The finite algebraic identities (the witness, the reduction identities) are verified exactly, by several independent programs.
@@ -90,13 +93,14 @@ Feedback, especially from specialists in hyperbolic PDE and higher-spin fields, 
 ## Repository contents
 
 ```
-data/        exact witness data (v, w, P, L, S⁰) in plain text
-scripts/     the six proof-carrying scripts (bhmap_defs.py, witness_min.py, check_1 … check_5)
-results/     owner's COMPLETE_PASS run (JSON, CSV) and golden script outputs
-paper/       the manuscript (PDF and LaTeX source), when released
-bhmap_validate_v1_4.py   the 35-check validation suite
-SHA256SUMS   fingerprints of every file
-CITATION.cff citation metadata
+data/          witness.txt (readable), witness.json (exact, machine-readable), read_witness.py (stdlib-only checker)
+scripts/       shared definitions + witness_min.py + check_1 … check_5 (the proof-carrying computations)
+results/       owner's COMPLETE_PASS run (JSON, CSV) and the expected output of every script
+paper/         the manuscript (PDF and LaTeX source), when released
+bhmap_validate_v1_5.py   the validation suite (36 checks)
+HOW_IT_WAS_CHECKED.md    verification method and provenance in brief
+SHA256SUMS     fingerprints of every file      CITATION.cff   citation metadata
+LICENSE        MIT (code)      CHANGELOG.md   version history
 ```
 
 ## Citation
@@ -109,4 +113,4 @@ Code: [MIT License](LICENSE). Paper, witness data and validation results: [CC BY
 
 ## Contact
 
-Sam DeRenzis · [GitHub profile](https://github.com/samderenzis)
+Sam DeRenzis · waitandhope123@gmail.com · [GitHub](https://github.com/samderenzis)

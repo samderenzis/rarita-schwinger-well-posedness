@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use or discuss this work, please cite it as below."
+title: "rarita-schwinger-well-posedness: exact witness and verification suite for a well-posedness obstruction in charged Pauli-coupled Rarita-Schwinger fields"
+authors:
+  - family-names: "DeRenzis"
+    given-names: "Sam"
+    email: "waitandhope123@gmail.com"
+type: software
+repository-code: "https://github.com/samderenzis/rarita-schwinger-well-posedness"
+license: MIT
+version: "1.0.0"
+date-released: "2026-11-21"
+keywords:
+  - mathematical physics
+  - Rarita-Schwinger
+  - spin-3/2
+  - Velo-Zwanziger
+  - well-posedness
+  - hyperbolic PDE
+  - computer-assisted proof
+  - reproducibility
+abstract: "Exact algebraic witness (a Jordan block in the constrained principal symbol) and a 36-check verification suite for a theorem that, for a charged Pauli-coupled massive Rarita-Schwinger field on R x S^2(1) x S^2(3) with parallel magnetic field at an explicit parameter point, existence, uniqueness and a loss-free L^2 bound cannot hold together on small backward light cones. AI-collaborative; not peer reviewed."
