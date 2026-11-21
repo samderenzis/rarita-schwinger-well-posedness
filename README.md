@@ -5,6 +5,7 @@
 ![Status](https://img.shields.io/badge/status-preprint_·_not_peer_reviewed-orange?style=flat-square)
 ![Validation](https://img.shields.io/badge/validation-COMPLETE__PASS_35%2F35-brightgreen?style=flat-square)
 ![Code license](https://img.shields.io/badge/code-MIT-blue?style=flat-square)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24413648.svg)](https://doi.org/10.5281/zenodo.24413648)
 ![Text and data license](https://img.shields.io/badge/text_%26_data-CC_BY_4.0-lightgrey?style=flat-square)
 
 ---
@@ -13,7 +14,7 @@
 
 For a charged, massive spin-3/2 (Rarita–Schwinger) field with Pauli coupling, on the background ℝ × S²(1) × S²(3) with a parallel magnetic field, the local Cauchy problem **cannot simultaneously have existence, uniqueness, and an L² energy bound that loses no derivatives** at the explicit parameter point λ² = 1/2, m² = 823/142944, π′ = 1/2 (Pauli slice). This holds on every sufficiently small backward light cone and at every Sobolev level ℓ ≥ 2. The obstruction is an exact, checkable algebraic object: after the constraints are eliminated, the principal symbol has a **Jordan block** (eigenvalue r = 101/99, two J₂ blocks) on the constraint-admissible directions. A necessity lemma turns this block into a contradiction with any loss-free bound.
 
-📄 **Paper:** *link coming soon* · 🔖 **DOI:** *Zenodo DOI coming soon*
+📄 **Paper:** *link coming soon* · 🔖 **DOI:** [10.5281/zenodo.24413648](https://doi.org/10.5281/zenodo.24413648)
 
 ## Main theorem (informal statement)
 
@@ -105,7 +106,7 @@ LICENSE        MIT (code)      CHANGELOG.md   version history
 
 ## Citation
 
-Use GitHub's **"Cite this repository"** button (from `CITATION.cff`), or cite the Zenodo DOI once released.
+Use GitHub's **"Cite this repository"** button (from `CITATION.cff`), or cite the Zenodo archive: [doi:10.5281/zenodo.24413648](https://doi.org/10.5281/zenodo.24413648). This DOI always resolves to the latest version; Zenodo also lists a DOI for each individual release.
 
 ## License
 

@@ -6,6 +6,11 @@ authors:
     given-names: "Sam"
     email: "waitandhope123@gmail.com"
 type: software
+doi: "10.5281/zenodo.24413648"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24413648"
+    description: "Zenodo concept DOI (all versions)"
 repository-code: "https://github.com/samderenzis/rarita-schwinger-well-posedness"
 license: MIT
 version: "1.0.0"
