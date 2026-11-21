@@ -1,5 +1,42 @@
 # Changelog
 
+## 1.0.7 (2026-11-21)
+Documentation only. No code, data or results file changed; the frozen paper candidate is untouched.
+- Added BACKGROUND.md. It covers:
+  - the history of the charged spin-3/2 problem, from Rarita–Schwinger (1941) through Johnson–Sudarshan (1961) and Velo–Zwanziger (1969) to recent work;
+  - physics tests versus energy-estimate tests;
+  - why the area is hard: weak versus strong hyperbolicity, lower-order terms and variable coefficients, constraints, formulation dependence, local versus global and fixed versus dynamical;
+  - a table of common pitfalls and how this project handles them;
+  - a summary of the kinds of mistake recorded in the project's errata register.
+
+  Every reference has a checked DOI or arXiv number. Literature descriptions follow the paper's introduction, with additional statements checked against the original abstracts or texts.
+- BACKGROUND was revised before release after a documentation and scope review by Perplexity (13 points):
+  - removed the claim that the theorem shows a theory passing both physics tests (no all-directions causality is established);
+  - "third, sharper question" → "an additional, distinct question";
+  - weak and strong hyperbolicity are now defined correctly (a Jordan block is one obstruction to strong hyperbolicity);
+  - non-real eigenvalues and frequency-proportional growth are distinguished from well-posedness;
+  - the J₂ growth needs suitable polarisation;
+  - the interaction opening is narrowed;
+  - constraint degeneracy no longer automatically changes the count of degrees of freedom;
+  - wave directions are separated from polarisations and constraint-violating modes;
+  - the numerical claims are qualified;
+  - the exact-arithmetic scope is stated (ℚ(i) for the witness certificate only);
+  - the blanket errata assurance is replaced by an impact-record statement;
+  - the blind attempts are identified (GEN17, GEN25: separate sessions of one AI, not independent review);
+  - "tests that cannot fail" is reworded;
+  - the ADM summary is qualified by formulation and gauge;
+  - the Johnson–Sudarshan summary is made precise;
+  - the actual scope of literature checking is stated above the references.
+
+  The links were checked and are relative.
+- Final follow-up from the same review (3 points), applied before release:
+  - the remaining blanket sentence about constraint-allowed directions is replaced with the reviewer's wording on polarisations, constraint-violating modes and covectors;
+  - "weakly but not strongly hyperbolic" is used for the Kreiss–Ortiz lower-order statement, with the coefficient assumptions noted;
+  - the links were re-verified as relative in the file (the claude.ai/chat addresses come from the chat rendering).
+- Checking record: the ADM gauge qualification was confirmed by Perplexity at abstract level against Kreiss–Ortiz gr-qc/0106085 (not a full-text audit).
+- The reviewer's final disposition: this round is closed. It is not certification of every literature summary, the private errata records, the computational implementation, or the complete mathematical proof.
+- README: links to BACKGROUND.md (reader signposts, the Open questions section, and the Repository contents table). The README's Repository contents section was already a table (layout-only commit 4f6699ef after v1.0.6).
+
 ## 1.0.6 (2026-11-21)
 Documentation only. No code, data or results file changed; the frozen paper candidate is untouched.
 - Added ROADMAP.md: a research plan, adapted from a planning suggestion by Perplexity, with references to this project's scripts and records. It covers:

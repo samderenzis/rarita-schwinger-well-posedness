@@ -16,7 +16,7 @@
 
 For a charged, massive spin-3/2 (Rarita–Schwinger) field with Pauli coupling, on the background ℝ × S²(1) × S²(3) with a parallel magnetic field, the local Cauchy problem **cannot simultaneously have existence, uniqueness, and an L² energy bound that loses no derivatives** at the explicit parameter point λ² = 1/2, m² = 823/142944, π′ = 1/2 (Pauli slice). This holds on every sufficiently small shrinking geodesic cone, for every cone speed c > 0, and at every Sobolev level ℓ ≥ 2. The obstruction is an exact, checkable algebraic object: after the constraints are eliminated, the principal symbol has a **Jordan block** (eigenvalue r = 101/99, two J₂ blocks) on the constraint-admissible directions. A necessity lemma turns this block into a contradiction with any loss-free bound.
 
-**New to the topic?** Start with [In plain terms](#in-plain-terms). **Specialist?** Jump to [the argument in more detail](#for-specialists-the-argument-in-more-detail) or [check the witness in one command](#check-it-yourself).
+**New to the topic?** Start with [In plain terms](#in-plain-terms), then [BACKGROUND.md](BACKGROUND.md). **Specialist?** Jump to [the argument in more detail](#for-specialists-the-argument-in-more-detail) or [check the witness in one command](#check-it-yourself).
 
 📄 **Paper:** written; a frozen candidate is under review and will be posted here afterwards · 🔖 **DOI:** [10.5281/zenodo.24413648](https://doi.org/10.5281/zenodo.24413648)
 
@@ -201,6 +201,8 @@ These are open, and contributions or pointers to the literature are welcome.
 
 **Separately:** [OUTLOOK.md](OUTLOOK.md) collects conjectures, speculation and some additional exact computations. These are **outside the main theorem**: they are not part of the paper's proof, are checked only by this project's own `scripts/outlook_checks.py`, and have had a documentation and scope review only: they have not been independently verified. Among them is an exact dispersion relation for the principal symbol at the witness parameters. One branch, lying in the constraint kernel, has characteristic phase speed above 1 (light speed in the orthonormal frame) in some directions, and the witness covector lies exactly where that branch crosses the light branch. These are statements about the principal symbol, not about signal propagation or causality. Treat them as additional claims, to be checked on their own.
 
+**New to the area?** [BACKGROUND.md](BACKGROUND.md) explains why charged spin-3/2 fields are hard to work with, lists common pitfalls and how this project handles them, and summarises the kinds of mistake the project itself made and caught.
+
 **What to do next:** [ROADMAP.md](ROADMAP.md) sets out a research plan in priority order, starting with securing the existing result and then asking whether the witness is isolated or part of a family. Contributions are welcome.
 
 - **Which property fails?** The theorem rules out existence, uniqueness and the loss-free bound *together*. Which one actually breaks is not decided.
@@ -233,6 +235,7 @@ Each reference is checked automatically by the validator (check G1): the DOI res
 | [`HOW_IT_WAS_CHECKED.md`](HOW_IT_WAS_CHECKED.md) | verification method and provenance, in brief |
 | [`RUNNING_THE_VALIDATOR.md`](RUNNING_THE_VALIDATOR.md) | how to run the validator, its options, and how to read the result |
 | [`OUTLOOK.md`](OUTLOOK.md) | where this might lead: conjectures and speculation, clearly labelled |
+| [`BACKGROUND.md`](BACKGROUND.md) | why this area is hard: history, the main difficulties, common pitfalls, and lessons from this project's own errata |
 | [`ROADMAP.md`](ROADMAP.md) | research plan: what to do next, in what order, and how each step would be judged |
 | [`CHANGELOG.md`](CHANGELOG.md) | version history |
 | [`CITATION.cff`](CITATION.cff) | citation metadata |
