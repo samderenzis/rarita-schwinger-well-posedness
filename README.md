@@ -2,7 +2,7 @@
 
 **Exact algebraic witness and full verification suite for a well-posedness obstruction in charged, Pauli-coupled Rarita–Schwinger fields on ℝ×S²×S².**
 
-![Status](https://img.shields.io/badge/status-preprint_·_not_peer_reviewed-orange?style=flat-square)
+![Status](https://img.shields.io/badge/status-paper_in_preparation_·_not_peer_reviewed-orange?style=flat-square)
 ![Validation](https://img.shields.io/badge/validation-COMPLETE__PASS-brightgreen?style=flat-square)
 ![Code license](https://img.shields.io/badge/code-MIT-blue?style=flat-square)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.24413648-blue?style=flat-square)](https://doi.org/10.5281/zenodo.24413648)
@@ -14,7 +14,7 @@
 
 For a charged, massive spin-3/2 (Rarita–Schwinger) field with Pauli coupling, on the background ℝ × S²(1) × S²(3) with a parallel magnetic field, the local Cauchy problem **cannot simultaneously have existence, uniqueness, and an L² energy bound that loses no derivatives** at the explicit parameter point λ² = 1/2, m² = 823/142944, π′ = 1/2 (Pauli slice). This holds on every sufficiently small backward light cone and at every Sobolev level ℓ ≥ 2. The obstruction is an exact, checkable algebraic object: after the constraints are eliminated, the principal symbol has a **Jordan block** (eigenvalue r = 101/99, two J₂ blocks) on the constraint-admissible directions. A necessity lemma turns this block into a contradiction with any loss-free bound.
 
-📄 **Paper:** *link coming soon* · 🔖 **DOI:** [10.5281/zenodo.24413648](https://doi.org/10.5281/zenodo.24413648)
+📄 **Paper:** in preparation · 🔖 **DOI:** [10.5281/zenodo.24413648](https://doi.org/10.5281/zenodo.24413648)
 
 ## Main theorem (informal statement)
 
@@ -23,7 +23,7 @@ For a charged, massive spin-3/2 (Rarita–Schwinger) field with Pauli coupling, 
 > **(U)** uniqueness in the much larger class C¹(L²) ∩ C(H¹),
 > **(B)** the loss-free bound ‖Φ(t)‖_{L²(B_t)} ≤ K e^{α(t−s)} ‖Φ₀‖_{L²(B_s)}.
 
-The precise statement, definitions and complete proof are in the paper.
+The precise statement, definitions and complete proof will be in the paper, which is in preparation. Until then, this repository holds the exact witness and every computation the proof relies on.
 
 ## The witness
 
@@ -60,7 +60,7 @@ Three levels, from no software at all to full re-computation:
    pip install sympy numpy scipy mpmath python-flint requests
    python bhmap_validate_v1_7.py --level standard --online
    ```
-   Run it from the repository folder: it detects the repository automatically. Use `--level deep` for the full stress test (about 30 minutes on a 12-core desktop); `--online` adds the citation checks (Crossref, arXiv). A complete run ends with `VERDICT: COMPLETE_PASS`. **[RUNNING_THE_VALIDATOR.md](RUNNING_THE_VALIDATOR.md)** explains every option, the verdicts, the output files and how to compare your run with ours.
+   Run it from the repository folder: it detects the repository automatically. Use `--level deep` for the full stress test (considerably longer); `--online` adds the citation checks (Crossref, arXiv). A complete run ends with `VERDICT: COMPLETE_PASS`. **[RUNNING_THE_VALIDATOR.md](RUNNING_THE_VALIDATOR.md)** explains every option, the verdicts, the output files and how to compare your run with ours.
 
    In this repository the archive checks verify the repository itself (every file against `SHA256SUMS`, the pinned scripts, and `data/witness.json` against a fresh recomputation). Three checks that need the project's private working archive (A2, A3, A5) are reported as **NA** (not applicable), listed, and never counted as passes. All published runs are in [`results/`](results/).
 
@@ -77,20 +77,29 @@ Three levels, from no software at all to full re-computation:
 | **G** Literature | every cited DOI and arXiv identifier exists and matches | Crossref and arXiv APIs |
 | **H** Self-tests | deliberately corrupted inputs must be caught | mutation tests of the checks themselves |
 
-**Owner's full-archive run (Ryzen 9 9900X, validator v1.7, the complete private working archive, standard level, online):** `COMPLETE_PASS`, 34 PASS + 1 INFO + 1 NA (A7, which applies only to this repository), all 36 checks accounted for, 213 s. All 7,314 archive files match their manifest, the archive restores to its full layout, the claim ledger and errata register are complete, 114/114 cited DOIs and 314/314 arXiv identifiers resolve, the six core references match on year, volume and page, and the self-tests catch 16/16 deliberate faults. The validator is the same file as the one in this repository. The published copy has local paths and private-archive file listings removed; statuses and measurements are unchanged, and the hash of the unmodified original (`0d68115d…cf37`) is recorded inside it.
+### Published runs
 
-**Public repository run (Ryzen 9 9900X, validator v1.7, standard level, online):** `COMPLETE_PASS`, 32 PASS + 1 INFO + 3 NA, all 36 checks accounted for, 189 s. It was run on a copy of this repository byte-identical to commit `e4d2303` (check A1: all 20 listed files match, none missing, none extra), and the validator file it ran has the same sha256 as the one published here. All 7 DOIs resolve, including this repository's Zenodo DOI. The results file is published exactly as produced (it contains no local paths): sha256 `41ad339fb05bf7a9941dfd944dde88fe720ce6988a837a513299b0ca02b3b329`, as printed by the validator at the end of the run.
+All runs were made by the project owner on a Ryzen 9 9900X. Every results file is in [`results/`](results/).
 
-**Earlier owner's deep run (Ryzen 9 9900X, full private archive, validator v1.4):** `COMPLETE_PASS`, 34 PASS + 1 INFO, all 35 checks. The published copy in `results/` has local paths and private-archive file listings removed; statuses and measurements are unchanged, and the hash of the unmodified original (`ec5b8f29…b1ce`) is recorded inside it. v1.5 added repository mode and one check (A7); v1.6 and v1.7 fix how the literature check reads this repository (see CHANGELOG).
+| Run | What was checked | Verdict | Highlights |
+|---|---|---|---|
+| **v1.7, full archive** (standard, online) | the complete private working archive | `COMPLETE_PASS`: 34 PASS, 1 INFO, 1 NA (A7, repository-only); 36/36 accounted for | 7,314/7,314 archive files match; restore, ledger and errata checks pass; 114/114 DOIs and 314/314 arXiv IDs resolve; core references match on year, volume and page; self-tests 16/16 |
+| **v1.7, this repository** (standard, online) | a copy byte-identical to commit `e4d2303` | `COMPLETE_PASS`: 32 PASS, 1 INFO, 3 NA (A2, A3, A5); 36/36 accounted for | A1 20/20 files; all 7 DOIs resolve, including this repository's; self-tests 13/13 |
+| **v1.4, full archive** (deep, online; earlier) | the private archive one generation earlier | `COMPLETE_PASS`: 34 PASS, 1 INFO; 35/35 | Lemma 4.1 worst ratio 0.4997 (adversarial 0.4802); 113/113 DOIs, 314/314 arXiv IDs |
+
+- The **repository run** is published exactly as produced. It contains no local paths. Its sha256, `41ad339f…b329`, is the one the validator printed at the end of the run.
+- The two **archive runs** are published with local paths and private-archive file listings removed. Statuses and measurements are unchanged, and each records the hash of its unmodified original inside it (`0d68115d…cf37` and `ec5b8f29…b1ce`).
+- Each run records the hash of the validator it used. The v1.7 runs match `bhmap_validate_v1_7.py` in this repository.
+- v1.5 added repository mode and check A7. v1.6 and v1.7 fixed how the literature check reads this repository; see CHANGELOG.
 
 ## How this work was produced, and its status
 
-This is **AI-collaborative research**. The project owner defined the programme, directed the work and ran the verification. Two AI systems (Claude and ChatGPT) acted as implementer and independent auditor, and the owner used Perplexity as needed for literature searches and physics cross-checks. Key lemmas were tested by statement-only blind derivations with hash-frozen records, every interface of the proof chain was audited, all computations were externally re-executed, and every failed attempt and correction was kept on record.
+This is **AI-collaborative research**. The project owner defined the programme, directed the work and ran the verification. Two AI systems acted as implementer (Claude) and auditor (ChatGPT), and the owner used Perplexity as needed for literature searches and physics cross-checks. Key lemmas were tested by statement-only blind derivations with hash-frozen records, every interface of the proof chain was audited, the proof-carrying scripts were re-executed by the second AI from the original files, and every failed attempt and correction was kept on record. The internal programme name is BHMAP, hence the validator's file name.
 
 **What this does and does not establish:**
-- ✅ The finite algebraic identities (the witness, the reduction identities) are verified exactly, by several independent programs.
+- ✅ The finite algebraic identities (the witness, the reduction identities) are verified in exact arithmetic, by several separate programs using three different arithmetic engines.
 - ✅ The analytic steps have complete written proofs, cross-checked by two AI systems; the key inequality survived extensive attempts to break it numerically.
-- ⚠️ The proof has **not yet been reviewed by a human expert** and is **not formally machine-verified** (a Lean formalisation of the witness algebra is planned).
+- ⚠️ The proof has **not yet been reviewed by a human expert**, is **not formally machine-verified** (a Lean formalisation of the witness algebra is planned), and has **not been independently replicated**: every check, including the re-executions, used this project's own code and data.
 - ⚠️ The scope is narrow: one background, one parameter point, the Pauli slice. It rules out the three properties *together* and does not say which one fails. It makes no physical claims.
 
 Feedback, especially from specialists in hyperbolic PDE and higher-spin fields, is very welcome.

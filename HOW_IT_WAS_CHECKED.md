@@ -21,7 +21,7 @@ Nothing here has been reviewed by a human expert.
 | L1 | Transfer between the original and reduced problems | Statement-only **blind derivation** by ChatGPT: proved, frozen hash verified |
 | L2 | Energy estimate from the well-posedness package | Blind derivation conditional on one lemma; closed by Claude's lemma; audited by ChatGPT (non-blind) |
 | L3 | Local coercivity | **Blind derivation**: proved, frozen hash verified |
-| L4 | Necessity lemma (R1) | Blind derivation failed at the oscillatory H⁻¹ estimate (twice, in independent attempts); closed by Claude's lemma; audited PASS by ChatGPT (non-blind) |
+| L4 | Necessity lemma (R1) | Blind derivation failed at the oscillatory H⁻¹ estimate (twice, in separate fresh attempts); closed by Claude's lemma; audited PASS by ChatGPT (non-blind) |
 | L5 | Application of R1: ball properties, function class | **Blind derivation**: proved |
 | L6 | Witness Jordan chain and contradiction | Exact computation, re-executed externally; contradiction re-derived blind |
 | All | Interfaces between links | Whole-chain audit (ChatGPT); three presentation defects found and closed; re-audit: all closed |
@@ -29,8 +29,8 @@ Nothing here has been reviewed by a human expert.
 "Blind" means a fresh AI chat received only the statement, never the existing proof. Its answer was frozen, with a hash, before any comparison.
 
 ## Machine validation
-The validation suite in this repository (`bhmap_validate_v1_7.py`) was itself reviewed by ChatGPT. That review found 26 issues, including 7 defects in the validator, and all were fixed. The suite's checks include:
-- the witness in three independent arithmetic engines;
+The first version of the validation suite (v1.0) was reviewed by ChatGPT. That review found 26 issues, including 7 defects in the validator, and all were fixed. Later versions, up to `bhmap_validate_v1_7.py` in this repository, were developed by Claude and tested against the owner's runs; they have not had a second external review. Three defects found in those runs (in how the literature check reads files) were fixed and are recorded in CHANGELOG.md. The suite's checks include:
+- the witness in three different arithmetic engines (SymPy, FLINT, pure-Python fractions);
 - representation independence, including dense non-unitary basis changes;
 - the operator identities evaluated to 60 digits;
 - numerical attacks on the key inequality (Lemma 4.1);
@@ -38,7 +38,9 @@ The validation suite in this repository (`bhmap_validate_v1_7.py`) was itself re
 - every citation;
 - mutation tests proving the checks can fail.
 
-The owner's deep run gave `COMPLETE_PASS`. The worst ratio found in the attacks on Lemma 4.1 was ≈ 0.50 against a limit of 1.
+Every published owner run gave `COMPLETE_PASS`: v1.7 on the full private archive, v1.7 on this repository, and the earlier v1.4 deep run on the archive. They are listed in the README, with the results in `results/`. The worst ratio found in the attacks on Lemma 4.1 was ≈ 0.50 against a limit of 1.
+
+All of these checks use this project's own code and data. Re-execution by a second AI confirms that the supplied computations run as claimed; it is not independent replication.
 
 ## What remains
 - Review by a human expert in hyperbolic PDE or higher-spin fields.
