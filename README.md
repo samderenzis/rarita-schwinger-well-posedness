@@ -187,7 +187,8 @@ Feedback, especially from specialists in hyperbolic PDE and higher-spin fields, 
 
 ## Open questions
 
-These are open, and contributions or pointers to the literature are welcome:
+These are open, and contributions or pointers to the literature are welcome. For conjectures, speculation and a new exact observation, see **[OUTLOOK.md](OUTLOOK.md)**: at the witness, one family of constraint-satisfying characteristics is *faster than light* along one sphere, and the Jordan block sits exactly where it crosses the light cone.
+
 - **Which property fails?** The theorem rules out existence, uniqueness and the loss-free bound *together*. Which one actually breaks is not decided.
 - **Off the Pauli slice.** Away from this slice, exploratory computations at the tested parameter values find that the degenerate double eigenvalue splits. The Jordan pattern found here appears specific to the slice, and the behaviour at the crossings off the slice is open.
 - **Other parameter points and backgrounds.** The witness is one exact point on one background.
@@ -210,12 +211,13 @@ Each reference is checked automatically by the validator (check G1): the DOI res
 
 ```
 data/          witness.txt (readable), witness.json (exact, machine-readable), read_witness.py (stdlib-only checker)
-scripts/       shared definitions + witness_min.py + check_1 … check_5 (the proof-carrying computations)
+scripts/       shared definitions + witness_min.py + check_1 … check_5 (the proof-carrying computations); outlook_checks.py (new checks behind OUTLOOK.md, not part of the proof)
 results/       owner's full-archive runs (v1.7, v1.4) and the public repository run (JSON, CSV), expected output of every script
 paper/         the manuscript (PDF and LaTeX source), when released
 bhmap_validate_v1_7.py   the validation suite (36 checks)
 HOW_IT_WAS_CHECKED.md    verification method and provenance in brief
 RUNNING_THE_VALIDATOR.md how to run the validator, its options, and how to read the result
+OUTLOOK.md     where this might lead: conjectures and speculation, clearly labelled
 SHA256SUMS     fingerprints of every file      CITATION.cff   citation metadata
 LICENSE        MIT (code)      CHANGELOG.md   version history
 ```
