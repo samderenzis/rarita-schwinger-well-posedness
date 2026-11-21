@@ -14,6 +14,8 @@
 
 For a charged, massive spin-3/2 (Rarita–Schwinger) field with Pauli coupling, on the background ℝ × S²(1) × S²(3) with a parallel magnetic field, the local Cauchy problem **cannot simultaneously have existence, uniqueness, and an L² energy bound that loses no derivatives** at the explicit parameter point λ² = 1/2, m² = 823/142944, π′ = 1/2 (Pauli slice). This holds on every sufficiently small backward light cone and at every Sobolev level ℓ ≥ 2. The obstruction is an exact, checkable algebraic object: after the constraints are eliminated, the principal symbol has a **Jordan block** (eigenvalue r = 101/99, two J₂ blocks) on the constraint-admissible directions. A necessity lemma turns this block into a contradiction with any loss-free bound.
 
+**New to the topic?** Start with [In plain terms](#in-plain-terms). **Specialist?** Jump to [the argument in more detail](#for-specialists-the-argument-in-more-detail) or [check the witness in one command](#check-it-yourself).
+
 📄 **Paper:** in preparation · 🔖 **DOI:** [10.5281/zenodo.24413648](https://doi.org/10.5281/zenodo.24413648)
 
 ## In plain terms
@@ -52,6 +54,46 @@ $$\big(\gamma - i(P - r)\big)\,a_\gamma = -\,i\gamma^2 w,$$
 so any loss-free bound would give $|v| \le (1+K)\,\gamma\,|w|$ for all γ > 0, which forces v = 0, a contradiction.
 
 The exact v, w, P, L and det S⁰ = 3063716808343140625 / 132101812606622109696 are in [`data/`](data/), readable without running anything.
+
+## For specialists: the argument in more detail
+
+<details>
+<summary><b>Setup, reduction, necessity lemma and witness</b> (click to expand)</summary>
+
+**Background and equations.**
+- The background is the product 𝕄 = ℝ_t × S²(1) × S²(3) (b₁ = 1, b₂ = 1/3) with the parallel 2-form F = b₁e¹∧e² + b₂e³∧e⁴. It is used on one chart V′ around y₀ = (π/2, 0, π/2, 0), with the local potential A = −cot θ₁ e² − cot θ₂ e⁴.
+- The field is a vector-spinor ψ = (ψ₀, Φ), with Φ ∈ ℂ¹⁶. The equations are R^ρ[ψ] := Γ^{ρνσ}(𝒟_νψ)_σ = 0, where 𝒟 contains the spin connection, the charge q and a mass/Pauli term X built from m, λ and F.
+- The witness lies on the Pauli slice q = λ√(2/3)·m, at λ² = 1/2, m² = 823/142944 and π′ = 1/2.
+
+**Exact reduction (no lower-order terms dropped).**
+- A divergence identity (D+Ŷ)_A R^A[ψ] = S^ρψ_ρ holds for every ψ. It rests on the Clifford intertwining Ŷ_μΓ^{μνρ} = Γ^{μνρ}X_μ; on this background the S^ρ are constant frame matrices.
+- Since det S⁰ = 3063716808343140625 / 132101812606622109696 ≠ 0, ψ₀ = 𝒲Φ is eliminated algebraically. This leaves an evolution ∂_tΦ = K′Φ with a single first-order constraint R⁰Φ = 0. There are no further constraints.
+- The constraint propagates exactly, to all orders: R⁰(∂_t − K′) = ★R⁰ and R⁰K′ = 𝒞R⁰.
+- So any loss-free L² package for the original system (existence in H^ℓ, uniqueness in C¹(L²) ∩ C(H¹), the bound with constants K, α) gives the same package for the constrained evolution, with the same K and α. That in turn gives an a priori estimate on exactly constrained test functions.
+
+**Small-ball coercivity.**
+- The constraint symbol satisfies L(ξ)L(ξ)† = 3|ξ|²I₄ for all ξ; this is exact, for symbolic ξ.
+- Freezing coefficients, with a Poincaré inequality, gives ‖R⁰*ρ‖_{L²} ≥ c₀‖ρ‖_{H¹} on small geodesic balls, with σ = √3·min(b₁, b₂).
+
+**Necessity lemma (variable coefficients, constrained).** Assume small-ball coercivity and the a priori estimate. Then
+
+  γ|a| ≤ K₀ |(γ − i(P(y₁,k) − τ)) a|   for every a ∈ ker L(y₁,k), all points y₁ of the ball, all k ≠ 0, all τ ∈ ℝ and all γ > 0.
+
+- This is a restricted resolvent bound on the kernel of the constraint symbol.
+- It does **not** assume P·ker L ⊂ ker L.
+- The proof uses concentrated wave packets, corrected back onto ker R⁰ by an exact Dirichlet/Lax–Milgram projection. It is a constrained analogue of the necessity direction in Ivriĭ–Petkov and Métivier.
+- The crux is a two-derivative oscillatory bound: ‖e^{iΛk·y}g‖_{H⁻¹} ≤ C(2(Λ|k|)⁻¹‖g‖ + 4(Λ|k|)⁻²‖D²g‖). The one-derivative version is not enough. Numerical attacks, including an adversarial optimiser, never exceed 0.50 of the bound.
+
+**The witness.**
+- At ξ\* = (20/99, 0, 1, 0), P(ξ\*) has only real eigenvalues: ±101/99, each of multiplicity 6, and ±101/198, each of multiplicity 2.
+- At r = 101/99, dim ker(P − r)^j = 4, 6, 6 for j = 1, 2, 3. That is two J₂ and two J₁ blocks.
+- A Jordan chain v → w lies inside ker L(ξ\*), with rank L = 4.
+- Testing the resolvent bound on a_γ = v − iγw and letting γ → 0 forces v = 0. This is the contradiction.
+- The same invariants appear in the other, inequivalent 5D Clifford representation (Γ⁴ → −Γ⁴).
+
+**What is deliberately not claimed.** The theorem rules out the conjunction (E) ∧ (U) ∧ (B) for this local formulation. It does not identify which property fails. It does not address C^∞ or Gevrey well-posedness, where lower-order (Levi-type) conditions could matter. It makes no global, formulation-independent, causal or physical claim.
+
+</details>
 
 ## The proof at a glance
 
