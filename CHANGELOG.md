@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.8 (2026-11-21)
+Documentation only. No code, data or results file changed; the frozen paper candidate is untouched. Corrections follow the full AI review by ChatGPT of the frozen candidate and the archive (GEN33).
+- HOW_IT_WAS_CHECKED.md:
+  - the validator review is now "26 findings: 24 fixed, 1 in part, 1 documented". It said "all were fixed", an overstatement already corrected in the paper but missed here;
+  - new section on the ChatGPT review: what it executed, what it read, what it found, and its scope.
+- RUNNING_THE_VALIDATOR.md: the opening now says the validator re-checks the claims covered by the selected mode, and that the reference check confirms identifiers. Archive checks are not applicable in public-repository mode.
+- README: "proof-carrying scripts" → "exact-check scripts". They are exact-arithmetic checks, not formal proof objects.
+- OUTLOOK A5: clarified that the Jordan chain survives any symbol-level reduction because P_h agrees with P on ker L. The project record's further claim that ker L is P_h-invariant needs the premise P(ker L) ⊆ ker L, which holds here by the paper's Prop. 5.1(b).
+- BACKGROUND references: Strang (1967) issue 3; Kreiss–Ortiz book title and pages, from Crossref.
+
 ## 1.0.7 (2026-11-21)
 Documentation only. No code, data or results file changed; the frozen paper candidate is untouched.
 - Added BACKGROUND.md. It covers:

@@ -29,7 +29,7 @@ Nothing here has been reviewed by a human expert.
 "Blind" means a fresh AI chat received only the statement, never the existing proof. Its answer was frozen, with a hash, before any comparison.
 
 ## Machine validation
-The first version of the validation suite (v1.0) was reviewed by ChatGPT. That review found 26 issues, including 7 defects in the validator, and all were fixed. Later versions, up to `bhmap_validate_v1_7.py` in this repository, were developed by Claude and tested against the owner's runs; they have not had a second external review. Three defects found in those runs (in how the literature check reads files) were fixed and are recorded in CHANGELOG.md. The suite's checks include:
+The first version of the validation suite (v1.0) was reviewed by ChatGPT. That review reported 26 findings, including 7 defects in the validator: 24 were fixed, one was fixed in part, and one was documented rather than changed. Later versions, up to `bhmap_validate_v1_7.py` in this repository, were developed by Claude and tested against the owner's runs; they have not had a second external review. Three defects found in those runs (in how the literature check reads files) were fixed and are recorded in CHANGELOG.md. The suite's checks include:
 - the witness in three different arithmetic engines (SymPy, FLINT, pure-Python fractions);
 - representation independence, including dense non-unitary basis changes;
 - the operator identities evaluated to 60 digits;
@@ -54,4 +54,37 @@ The paper (written; not yet posted) was reviewed by Perplexity at the manuscript
 In the reviewer's own words: "The frozen candidate PDF was inspected, and the reported manuscript corrections were confirmed in the document. The specific objections raised during this review were addressed. The associated source code, computational certificates, archive integrity, and complete mathematical proof were not independently verified in this review."
 
 It is not independent replication, not execution of the verification suite, not certification of the theorem, and not human expert review. A further review by ChatGPT of the paper, code, data, OUTLOOK and archive together is planned; its outcome is not presumed.
+
+## Full AI review by ChatGPT (2026-11-21)
+
+After the Perplexity rounds, ChatGPT reviewed the frozen paper candidate together with the full project archive (GEN33), in three parts: a partial report, then two batches.
+
+**What it executed** (its own environment: Python 3.13.5, SymPy 1.14.0):
+- the archive and manifest checksums;
+- the witness programs and the 19-item number audit;
+- `check_1` … `check_5`;
+- the review check scripts (both signs of λ);
+- `outlook_checks.py`.
+
+All of these passed.
+- `check_4` completed in a background retry after the first attempt hit its environment's time limit.
+- It confirmed that the scripts' matrix M is the negative of the paper's, so the signs cancel and the implemented reduction agrees with the paper's §3.
+
+**What it read and analysed:**
+- **The paper's §4 and Appendix B.** It found no invalid inference: the order of limits is correct and the constants of Lemma B.4 are independent of the difference step.
+- **The constraint route.** The current route needs only uniqueness among constrained solutions, not subsidiary uniqueness for the constraint equation.
+- **The project records behind OUTLOOK.**
+- **All 31 references.** Most were checked at abstract or metadata level; two (Ivriĭ–Petkov, Métivier) were checked at full-text level.
+- **Consistency across the documents.**
+
+**What it found:**
+- No error in the mathematics.
+- Documentation inconsistencies, now corrected in v1.0.8:
+  - this page's validator-review count;
+  - the validator's scope wording;
+  - "proof-carrying" for scripts that are exact checks, not formal proofs.
+- One premise missing from an internal project record (GEN9 Proposition L5.1). It does not affect the witness.
+- Bibliographic metadata to complete in a later paper version.
+
+**Its scope, in its own terms:** this is an AI review, not human expert review, certification or independent replication. The checks re-ran the project's own code, data and conventions. Its overall verdict: the result is a specific, model-dependent mathematical theorem with an exact witness. Which property fails, other parameter points, formulation independence, causality and physical interpretation are not established.
 

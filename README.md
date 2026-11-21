@@ -183,7 +183,7 @@ All runs were made by the project owner on a Ryzen 9 9900X. Every results file i
 
 ## How this work was produced, and its status
 
-This is **AI-collaborative research**. The project owner defined the programme, directed the work and ran the verification. Two AI systems acted as implementer (Claude) and auditor (ChatGPT), and the owner used Perplexity as needed for literature searches and physics cross-checks. Key lemmas were tested by statement-only blind derivations with hash-frozen records, every interface of the proof chain was audited, the proof-carrying scripts were re-executed by the second AI from the original files, and every failed attempt and correction was kept on record. The internal programme name is BHMAP, hence the validator's file name.
+This is **AI-collaborative research**. The project owner defined the programme, directed the work and ran the verification. Two AI systems acted as implementer (Claude) and auditor (ChatGPT), and the owner used Perplexity as needed for literature searches and physics cross-checks. Key lemmas were tested by statement-only blind derivations with hash-frozen records, every interface of the proof chain was audited, the exact-check scripts were re-executed by the second AI from the original files, and every failed attempt and correction was kept on record. The internal programme name is BHMAP, hence the validator's file name.
 
 **What this does and does not establish:**
 - ✅ The finite algebraic identities (the witness, the reduction identities) are verified in exact arithmetic, by several separate programs using three different arithmetic engines.
@@ -228,7 +228,7 @@ Each reference is checked automatically by the validator (check G1): the DOI res
 | Path | What it is |
 |---|---|
 | [`data/`](data/) | `witness.txt` (readable), `witness.json` (exact, machine-readable), `read_witness.py` (checker using only Python's standard library) |
-| [`scripts/`](scripts/) | shared definitions, `witness_min.py` and `check_1` … `check_5` (the proof-carrying computations); `outlook_checks.py` (the checks behind OUTLOOK.md, not part of the proof) |
+| [`scripts/`](scripts/) | shared definitions, `witness_min.py` and `check_1` … `check_5` (the exact-check computations); `outlook_checks.py` (the checks behind OUTLOOK.md, not part of the proof) |
 | [`results/`](results/) | the owner's full-archive runs (v1.7, v1.4) and the public repository run (JSON, CSV); the expected output of every script |
 | [`paper/`](paper/) | the manuscript (PDF and LaTeX source), when released |
 | [`bhmap_validate_v1_7.py`](bhmap_validate_v1_7.py) | the validation suite (36 checks) |

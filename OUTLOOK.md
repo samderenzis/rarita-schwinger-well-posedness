@@ -84,7 +84,7 @@ These are AI-only results of this project, recorded in `GEN9/G9_THEORY_UPGRADE.m
 ### A5. Constraint additions [PAPER; PROJECT RECORD]
 
 - **[PAPER, Prop. 5.1(a)]** For the one-parameter family of constraint additions π′: P_{π′} − P_{π″} = (π′ − π″)M⁻¹TL, which vanishes on ker L. So P restricted to ker L, and the Jordan chain, are the same for every π′. (`outlook_checks.py` check 4 is a regression test of this at four values.)
-- **[PROJECT RECORD]** GEN9 Proposition L5.1 extends the same elementary argument to any symbol-level reduction P_h = P − A⁻¹BL with A invertible: it agrees with P on ker L, so it keeps the Jordan chain. Recorded status: ESTABLISHED (elementary).
+- **[PROJECT RECORD]** GEN9 Proposition L5.1 extends the same elementary argument to any symbol-level reduction P_h = P − A⁻¹BL with A invertible: it agrees with P on ker L, so it keeps the Jordan chain (for v, w ∈ ker L, (P_h − r)w = (P − r)w = v). Recorded status: ESTABLISHED (elementary). The record also says ker L is P_h-invariant. That needs the extra premise P(ker L) ⊆ ker L, which the record omits (noted in ChatGPT's review); for this system the premise holds by the paper's Prop. 5.1(b), LP = C₁L. The Jordan-chain conclusion does not need it.
 - **Open question.** Reformulations that change the variables or field content, such as keeping ψ₀ dynamical, Stückelberg fields, auxiliary fields or other gauges, are not covered. The defect is unchanged under the constraint additions and symbol-level reductions explicitly described above. No claim is made for the other reformulations just listed.
 
 ### A6. The coefficient in the Pauli term [PROJECT RECORD]

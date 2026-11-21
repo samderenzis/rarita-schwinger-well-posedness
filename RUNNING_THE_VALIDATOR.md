@@ -1,6 +1,6 @@
 # Running the validator
 
-`bhmap_validate_v1_7.py` re-checks every computational claim behind the result, checks this repository's files, and (optionally) checks every cited reference online. This page explains how to run it, what the options do, and how to read the result.
+`bhmap_validate_v1_7.py` re-checks the computational claims covered by the selected mode, checks this repository's files, and (optionally) checks that every cited reference's identifier resolves online. In this public repository some archive checks (A2, A3, A5) are not applicable, because they concern the project's private archive; the full archive run covers them. This page explains how to run it, what the options do, and how to read the result.
 
 ## 1. Set up (once)
 
