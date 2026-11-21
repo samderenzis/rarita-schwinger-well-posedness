@@ -223,19 +223,21 @@ Each reference is checked automatically by the validator (check G1): the DOI res
 
 ## Repository contents
 
-```
-data/          witness.txt (readable), witness.json (exact, machine-readable), read_witness.py (stdlib-only checker)
-scripts/       shared definitions + witness_min.py + check_1 … check_5 (the proof-carrying computations); outlook_checks.py (new checks behind OUTLOOK.md, not part of the proof)
-results/       owner's full-archive runs (v1.7, v1.4) and the public repository run (JSON, CSV), expected output of every script
-paper/         the manuscript (PDF and LaTeX source), when released
-bhmap_validate_v1_7.py   the validation suite (36 checks)
-HOW_IT_WAS_CHECKED.md    verification method and provenance in brief
-RUNNING_THE_VALIDATOR.md how to run the validator, its options, and how to read the result
-OUTLOOK.md     where this might lead: conjectures and speculation, clearly labelled
-ROADMAP.md     research plan: what to do next, in what order, and how each step would be judged
-SHA256SUMS     fingerprints of every file      CITATION.cff   citation metadata
-LICENSE        MIT (code)      CHANGELOG.md   version history
-```
+| Path | What it is |
+|---|---|
+| [`data/`](data/) | `witness.txt` (readable), `witness.json` (exact, machine-readable), `read_witness.py` (checker using only Python's standard library) |
+| [`scripts/`](scripts/) | shared definitions, `witness_min.py` and `check_1` … `check_5` (the proof-carrying computations); `outlook_checks.py` (the checks behind OUTLOOK.md, not part of the proof) |
+| [`results/`](results/) | the owner's full-archive runs (v1.7, v1.4) and the public repository run (JSON, CSV); the expected output of every script |
+| [`paper/`](paper/) | the manuscript (PDF and LaTeX source), when released |
+| [`bhmap_validate_v1_7.py`](bhmap_validate_v1_7.py) | the validation suite (36 checks) |
+| [`HOW_IT_WAS_CHECKED.md`](HOW_IT_WAS_CHECKED.md) | verification method and provenance, in brief |
+| [`RUNNING_THE_VALIDATOR.md`](RUNNING_THE_VALIDATOR.md) | how to run the validator, its options, and how to read the result |
+| [`OUTLOOK.md`](OUTLOOK.md) | where this might lead: conjectures and speculation, clearly labelled |
+| [`ROADMAP.md`](ROADMAP.md) | research plan: what to do next, in what order, and how each step would be judged |
+| [`CHANGELOG.md`](CHANGELOG.md) | version history |
+| [`CITATION.cff`](CITATION.cff) | citation metadata |
+| [`SHA256SUMS`](SHA256SUMS) | fingerprints of every file |
+| [`LICENSE`](LICENSE) | MIT (code) |
 
 ## Citation
 
