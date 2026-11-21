@@ -55,12 +55,12 @@ Three levels, from no software at all to full re-computation:
    python check_1_clifford_intertwining.py   # and check_2 … check_5
    ```
    Each script prints `True` for every identity it verifies. The expected output is listed in [`results/golden_outputs.txt`](results/).
-3. **Run the full validation suite** (5–30 minutes depending on level):
+3. **Run the full validation suite** (about 3 minutes at standard level on a 12-core desktop):
    ```bash
    pip install sympy numpy scipy mpmath python-flint requests
    python bhmap_validate_v1_7.py --level standard --online
    ```
-   Run it from the repository folder: it detects the repository automatically. Use `--level deep` for the full stress test (about 30 minutes on a 12-core desktop); `--online` adds the citation checks (Crossref, arXiv). A complete run ends with `VERDICT: COMPLETE_PASS`.
+   Run it from the repository folder: it detects the repository automatically. Use `--level deep` for the full stress test (about 30 minutes on a 12-core desktop); `--online` adds the citation checks (Crossref, arXiv). A complete run ends with `VERDICT: COMPLETE_PASS`. **[RUNNING_THE_VALIDATOR.md](RUNNING_THE_VALIDATOR.md)** explains every option, the verdicts, the output files and how to compare your run with ours.
 
    In this repository the archive checks verify the repository itself (every file against `SHA256SUMS`, the pinned scripts, and `data/witness.json` against a fresh recomputation). Three checks that need the project's private working archive (A2, A3, A5) are reported as **NA** (not applicable), listed, and never counted as passes. Both published runs are in [`results/`](results/).
 
@@ -102,6 +102,7 @@ results/       public repository run and owner's full-archive run (JSON, CSV), e
 paper/         the manuscript (PDF and LaTeX source), when released
 bhmap_validate_v1_7.py   the validation suite (36 checks)
 HOW_IT_WAS_CHECKED.md    verification method and provenance in brief
+RUNNING_THE_VALIDATOR.md how to run the validator, its options, and how to read the result
 SHA256SUMS     fingerprints of every file      CITATION.cff   citation metadata
 LICENSE        MIT (code)      CHANGELOG.md   version history
 ```
