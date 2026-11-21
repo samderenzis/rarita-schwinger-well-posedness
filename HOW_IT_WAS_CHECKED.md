@@ -29,7 +29,7 @@ Nothing here has been reviewed by a human expert.
 "Blind" means a fresh AI chat received only the statement, never the existing proof. Its answer was frozen, with a hash, before any comparison.
 
 ## Machine validation
-The validation suite in this repository (`bhmap_validate_v1_6.py`) was itself reviewed by ChatGPT. That review found 26 issues, including 7 defects in the validator, and all were fixed. The suite's checks include:
+The validation suite in this repository (`bhmap_validate_v1_7.py`) was itself reviewed by ChatGPT. That review found 26 issues, including 7 defects in the validator, and all were fixed. The suite's checks include:
 - the witness in three independent arithmetic engines;
 - representation independence, including dense non-unitary basis changes;
 - the operator identities evaluated to 60 digits;

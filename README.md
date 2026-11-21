@@ -3,7 +3,7 @@
 **Exact algebraic witness and full verification suite for a well-posedness obstruction in charged, Pauli-coupled Rarita–Schwinger fields on ℝ×S²×S².**
 
 ![Status](https://img.shields.io/badge/status-preprint_·_not_peer_reviewed-orange?style=flat-square)
-![Validation](https://img.shields.io/badge/validation-COMPLETE__PASS_35%2F35-brightgreen?style=flat-square)
+![Validation](https://img.shields.io/badge/validation-COMPLETE__PASS-brightgreen?style=flat-square)
 ![Code license](https://img.shields.io/badge/code-MIT-blue?style=flat-square)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.24413648-blue?style=flat-square)](https://doi.org/10.5281/zenodo.24413648)
 ![Text and data license](https://img.shields.io/badge/text_%26_data-CC_BY_4.0-lightgrey?style=flat-square)
@@ -58,11 +58,11 @@ Three levels, from no software at all to full re-computation:
 3. **Run the full validation suite** (5–30 minutes depending on level):
    ```bash
    pip install sympy numpy scipy mpmath python-flint requests
-   python bhmap_validate_v1_6.py --level standard --online
+   python bhmap_validate_v1_7.py --level standard --online
    ```
    Run it from the repository folder: it detects the repository automatically. Use `--level deep` for the full stress test (about 30 minutes on a 12-core desktop); `--online` adds the citation checks (Crossref, arXiv). A complete run ends with `VERDICT: COMPLETE_PASS`.
 
-   In this repository the archive checks verify the repository itself (every file against `SHA256SUMS`, the pinned scripts, and `data/witness.json` against a fresh recomputation). Three checks that need the project's private working archive (A2, A3, A5) are reported as **NA** (not applicable), listed, and never counted as passes. The owner's full-archive run is in [`results/`](results/).
+   In this repository the archive checks verify the repository itself (every file against `SHA256SUMS`, the pinned scripts, and `data/witness.json` against a fresh recomputation). Three checks that need the project's private working archive (A2, A3, A5) are reported as **NA** (not applicable), listed, and never counted as passes. The owner's full-archive run is in [`results/`](results/); the public repository run will be added there.
 
 ## What the validation covers
 
@@ -77,7 +77,7 @@ Three levels, from no software at all to full re-computation:
 | **G** Literature | every cited DOI and arXiv identifier exists and matches | Crossref and arXiv APIs |
 | **H** Self-tests | deliberately corrupted inputs must be caught | mutation tests of the checks themselves |
 
-**Owner's deep run (Ryzen 9 9900X, full private archive, validator v1.4):** `COMPLETE_PASS`, 34 PASS + 1 INFO, all 35 checks. The published copy in `results/` has local paths and private-archive file listings removed; statuses and measurements are unchanged, and the hash of the unmodified original (`ec5b8f29…b1ce`) is recorded inside it. v1.5 added repository mode and one check (A7); v1.6 fixes how the literature check reads this repository (see CHANGELOG).
+**Owner's deep run (Ryzen 9 9900X, full private archive, validator v1.4):** `COMPLETE_PASS`, 34 PASS + 1 INFO, all 35 checks. The published copy in `results/` has local paths and private-archive file listings removed; statuses and measurements are unchanged, and the hash of the unmodified original (`ec5b8f29…b1ce`) is recorded inside it. v1.5 added repository mode and one check (A7); v1.6 and v1.7 fix how the literature check reads this repository (see CHANGELOG).
 
 ## How this work was produced, and its status
 
@@ -98,7 +98,7 @@ data/          witness.txt (readable), witness.json (exact, machine-readable), r
 scripts/       shared definitions + witness_min.py + check_1 … check_5 (the proof-carrying computations)
 results/       owner's COMPLETE_PASS run (JSON, CSV) and the expected output of every script
 paper/         the manuscript (PDF and LaTeX source), when released
-bhmap_validate_v1_6.py   the validation suite (36 checks)
+bhmap_validate_v1_7.py   the validation suite (36 checks)
 HOW_IT_WAS_CHECKED.md    verification method and provenance in brief
 SHA256SUMS     fingerprints of every file      CITATION.cff   citation metadata
 LICENSE        MIT (code)      CHANGELOG.md   version history
