@@ -62,7 +62,7 @@ Three levels, from no software at all to full re-computation:
    ```
    Run it from the repository folder: it detects the repository automatically. Use `--level deep` for the full stress test (about 30 minutes on a 12-core desktop); `--online` adds the citation checks (Crossref, arXiv). A complete run ends with `VERDICT: COMPLETE_PASS`. **[RUNNING_THE_VALIDATOR.md](RUNNING_THE_VALIDATOR.md)** explains every option, the verdicts, the output files and how to compare your run with ours.
 
-   In this repository the archive checks verify the repository itself (every file against `SHA256SUMS`, the pinned scripts, and `data/witness.json` against a fresh recomputation). Three checks that need the project's private working archive (A2, A3, A5) are reported as **NA** (not applicable), listed, and never counted as passes. Both published runs are in [`results/`](results/).
+   In this repository the archive checks verify the repository itself (every file against `SHA256SUMS`, the pinned scripts, and `data/witness.json` against a fresh recomputation). Three checks that need the project's private working archive (A2, A3, A5) are reported as **NA** (not applicable), listed, and never counted as passes. All published runs are in [`results/`](results/).
 
 ## What the validation covers
 
@@ -77,9 +77,11 @@ Three levels, from no software at all to full re-computation:
 | **G** Literature | every cited DOI and arXiv identifier exists and matches | Crossref and arXiv APIs |
 | **H** Self-tests | deliberately corrupted inputs must be caught | mutation tests of the checks themselves |
 
+**Owner's full-archive run (Ryzen 9 9900X, validator v1.7, the complete private working archive, standard level, online):** `COMPLETE_PASS`, 34 PASS + 1 INFO + 1 NA (A7, which applies only to this repository), all 36 checks accounted for, 213 s. All 7,314 archive files match their manifest, the archive restores to its full layout, the claim ledger and errata register are complete, 114/114 cited DOIs and 314/314 arXiv identifiers resolve, the six core references match on year, volume and page, and the self-tests catch 16/16 deliberate faults. The validator is the same file as the one in this repository. The published copy has local paths and private-archive file listings removed; statuses and measurements are unchanged, and the hash of the unmodified original (`0d68115d…cf37`) is recorded inside it.
+
 **Public repository run (Ryzen 9 9900X, validator v1.7, standard level, online):** `COMPLETE_PASS`, 32 PASS + 1 INFO + 3 NA, all 36 checks accounted for, 189 s. It was run on a copy of this repository byte-identical to commit `e4d2303` (check A1: all 20 listed files match, none missing, none extra), and the validator file it ran has the same sha256 as the one published here. All 7 DOIs resolve, including this repository's Zenodo DOI. The results file is published exactly as produced (it contains no local paths): sha256 `41ad339fb05bf7a9941dfd944dde88fe720ce6988a837a513299b0ca02b3b329`, as printed by the validator at the end of the run.
 
-**Owner's deep run (Ryzen 9 9900X, full private archive, validator v1.4):** `COMPLETE_PASS`, 34 PASS + 1 INFO, all 35 checks. The published copy in `results/` has local paths and private-archive file listings removed; statuses and measurements are unchanged, and the hash of the unmodified original (`ec5b8f29…b1ce`) is recorded inside it. v1.5 added repository mode and one check (A7); v1.6 and v1.7 fix how the literature check reads this repository (see CHANGELOG).
+**Earlier owner's deep run (Ryzen 9 9900X, full private archive, validator v1.4):** `COMPLETE_PASS`, 34 PASS + 1 INFO, all 35 checks. The published copy in `results/` has local paths and private-archive file listings removed; statuses and measurements are unchanged, and the hash of the unmodified original (`ec5b8f29…b1ce`) is recorded inside it. v1.5 added repository mode and one check (A7); v1.6 and v1.7 fix how the literature check reads this repository (see CHANGELOG).
 
 ## How this work was produced, and its status
 
@@ -98,7 +100,7 @@ Feedback, especially from specialists in hyperbolic PDE and higher-spin fields, 
 ```
 data/          witness.txt (readable), witness.json (exact, machine-readable), read_witness.py (stdlib-only checker)
 scripts/       shared definitions + witness_min.py + check_1 … check_5 (the proof-carrying computations)
-results/       public repository run and owner's full-archive run (JSON, CSV), expected output of every script
+results/       owner's full-archive runs (v1.7, v1.4) and the public repository run (JSON, CSV), expected output of every script
 paper/         the manuscript (PDF and LaTeX source), when released
 bhmap_validate_v1_7.py   the validation suite (36 checks)
 HOW_IT_WAS_CHECKED.md    verification method and provenance in brief

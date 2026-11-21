@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.3 (2026-11-21)
+- Added the owner's full-archive run of validator v1.7 (standard level, online): COMPLETE_PASS, 34 PASS + 1 INFO + 1 NA (A7, repository-only), all 36 checks accounted for; 7,314/7,314 archive files, 114/114 DOIs, 314/314 arXiv identifiers, H2 16/16. `results/owner_run_v1_7_archive_standard_COMPLETE_PASS.json` is sanitised as before (local paths and private-archive listings removed; statuses and measurements unchanged; original sha256 recorded inside); the CSV is unmodified. The v1.4 run is kept.
+
 ## 1.0.2 (2026-11-21)
 - Added RUNNING_THE_VALIDATOR.md: setup, every option, levels, verdicts and statuses, output files, and how to compare a run with the published ones. Linked from README.md. The validator itself is unchanged.
 
