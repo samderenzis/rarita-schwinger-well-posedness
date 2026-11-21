@@ -1,116 +1,207 @@
 # Outlook: where this might lead
 
-> **Read this as speculation.** The [README](README.md) states what is established. This page looks ahead: what the result *suggests*, what might be true, and what to compute next. Every item carries a label:
+> **What this page is.** The [README](README.md) states what is established. This page collects **additional** exact computations, conjectures and interpretations that go beyond the main theorem. The additional claims and interpretations on this page are not used in the theorem's proof; items labelled PAPER summarise results already used or established in the manuscript. This page has received a documentation and scope review (Perplexity, 2026-11-21). Its additional computations, internal project records and mathematical conclusions have not been independently verified. It is organised in three parts:
 >
-> - **[ESTABLISHED]**: part of the proved result or the frozen record.
-> - **[NEW · exact · unaudited]**: an exact computation made on 2026-11-21 for this page. Run it yourself with `python scripts/outlook_checks.py` (sympy only, a few seconds). It is not part of the proof and has not been reviewed by anyone else.
-> - **[CONJECTURE]**: a precise guess that a computation or proof could settle.
-> - **[SPECULATION]**: an interpretation or analogy, offered to start a conversation.
+> - **A. Additional exact algebraic claims**: explicit formulas, with the script that checks each one.
+> - **B. Mathematical conjectures**: precise guesses, what motivates them, and what would settle them.
+> - **C. Physical interpretations**: kept separate from the algebra, with their limits stated.
 >
-> **Scope.** Everything on this page labelled NEW, CONJECTURE or SPECULATION is an **additional claim outside the main theorem**. It is not part of the paper's proof. It was not assessed in the review of the paper, and it is supported only by this project's own script `scripts/outlook_checks.py`. A later review is planned to examine this page and the script directly.
+> Every item carries a status label:
+> - **[PAPER]**: proved in the paper (frozen candidate, not yet public). Like the rest of the project, it is AI-checked only.
+> - **[PROJECT RECORD]**: an earlier internal result of this project, with the status recorded there. The records are in the project's private archive and will be included in the planned full review.
+> - **[NEW · exact · unaudited]**: an exact computation checked by [`scripts/outlook_checks.py`](scripts/outlook_checks.py) (sympy only, under a minute). It is project code and has not been reviewed by anyone else.
+> - **[CONJECTURE]**: a precise statement that is not proved.
+> - **[RESEARCH QUESTION]**: a scenario worth investigating, not yet stated with full quantifiers.
+> - **[INTERPRETATION]** or **[SPECULATION]**: a reading or analogy, offered to start a conversation.
+>
+> The script supports only the algebraic items marked NEW. It cannot support any conjecture, research question or physical interpretation.
 
 ---
 
-## 1. The obstruction sits where a faster-than-light sheet meets the light cone
+## Part A. Additional exact algebraic claims
 
-This is the most striking thing on this page, and the main reason it was written. It is an additional claim, separate from the main theorem: the theorem uses only the Jordan chain, and does not depend on anything in this section. "Light speed" here means speed 1 in the orthonormal frame of the background; the theorem's own cones have arbitrary speed c and are not light cones.
+All of Part A concerns the **frame principal symbol** P(ξ) of the reduced system at the witness parameters, with π′ = 1/2 unless stated. Here ξ = (ξ₁, ξ₂, ξ₃, ξ₄) is a frame covector, with ξ_a = (ξ₁, ξ₂) along S²(1) and ξ_b = (ξ₃, ξ₄) along S²(3). The background is homogeneous and the matrices S^ρ are constant in the frame, so the frame symbol is the same at every point of the chart. Light speed is 1 in this orthonormal frame.
 
-**What the computation shows** [NEW · exact · unaudited]. At the witness parameters, take the principal symbol P(ξ) of the reduced system for a unit covector. Light speed is 1 in the orthonormal frame. Its characteristic speeds are then exact:
+### A1. The full dispersion relation [NEW · exact · unaudited]
 
-| direction of ξ | speeds |
-|---|---|
-| along S²(1) | ±1, ±1/2, ±√(349353481/1750347625) ≈ **±0.4468** |
-| along S²(3) | ±1, ±1/2, ±√(72301009/70013905) ≈ **±1.0162** |
+For a **symbolic** covector ξ, the characteristic polynomial of P(ξ) factors exactly as
 
-- So one family of characteristics, called the "G-sheet" in the project's notes, is **anisotropic**. It is faster than light along the second sphere and slower than light along the first.
-- The faster-than-light modes are not artefacts. Their whole eigenspace (dimension 4) lies **inside the constraint kernel** ker L, so they are constraint-satisfying, physical directions of the reduced system.
-- Faster-than-light characteristics for charged spin-3/2 fields are exactly what Velo and Zwanziger found in 1969.
+  det(x − P(ξ)) = (x² − v₁²|ξ_a|² − v₃²|ξ_b|²)² · (x² − |ξ|²)⁴ · (x² − |ξ|²/4)²,
 
-**Where the witness sits** [ESTABLISHED + NEW]. The G-sheet crosses the light cone on the cone of covectors
+with
 
-  𝒳 = {(v₁² − 1)|ξ_a|² + (v₃² − 1)|ξ_b|² = 0}.
+  v₁² = 349353481/1750347625 (v₁ ≈ 0.4468),  v₃² = 72301009/70013905 (v₃ ≈ 1.0162).
 
-Here ξ_a and ξ_b are the components along the two spheres, and v₁, v₃ are the speeds above.
-- The witness covector ξ\* = (20/99, 0, 1, 0) satisfies this **exactly**.
-- That is why the Jordan eigenvalue r = 101/99 equals |ξ\*|: the block sits **on the light cone**.
-- The project's earlier work showed that such a crossing produces a Jordan block only when it is *transversal*, i.e. when (v₁² − 1)(v₃² − 1) < 0. When the two sheets coincide everywhere, the defect vanishes (GEN9, Theorem L3.2).
+This is checked as an identity of polynomials in (ξ₁, ξ₂, ξ₃, ξ₄, x) by `outlook_checks.py`, check 5. So the symbol has three branches:
 
-Put together: **the L² obstruction lives exactly on the boundary of the directions in which the field outruns light.**
+| branch | eigenvalues ω | algebraic multiplicity |
+|---|---|---|
+| "light" | ±\|ξ\| | 4 each |
+| "G-branch" | ±ω_G(ξ), with ω_G² = v₁²\|ξ_a\|² + v₃²\|ξ_b\|² | 2 each |
+| constraint quotient | ±π′\|ξ\| = ±\|ξ\|/2 | 2 each |
 
-**Why this is more than Velo–Zwanziger again** [ESTABLISHED that the theorem holds for every c; the interpretation is ours]. The theorem holds for *every* cone speed c > 0, including cones wider than the fastest characteristic, c > 1.0162. A failure caused only by signals outrunning the cone would disappear once the cone is wide enough. This one does not. The obstruction is a **degeneracy** (eigenvectors coalescing), not just a speed. The superluminal sheet is what *creates* the transversal crossing; the Jordan block at the crossing is what *breaks* the estimate.
+The third branch depends on π′. The final factor is the characteristic polynomial of the map that P induces on the quotient by ker L ([PAPER], Prop. 5.1(c)); this identifies its quotient origin. Since v₁ < 1/2 < v₃, the G-branch and the quotient eigenvalue coincide in some directions. Where spectral branches coincide, an eigenvalue alone does not identify whether an eigenvector lies in the constraint kernel, so no constraint violation is inferred from the value ±|ξ|/2 alone.
 
-**[SPECULATION]** Deser and Waldron traced the onset of the classic spin-3/2 acausality to a degeneracy: a gauge invariance that appears exactly at the onset ([hep-th/0112182](https://arxiv.org/abs/hep-th/0112182)). Here a different degeneracy appears exactly at the boundary of the superluminal directions. These may be two faces of the same phenomenon: the field equations "lose a direction" where the characteristic geometry changes type. Making that precise would be worthwhile.
+### A2. Which branches lie in the constraint kernel [NEW · exact · unaudited]
 
-## 2. Which of existence, uniqueness and the energy bound actually fails?
+- Along ξ = e₃, the G-branch eigenspace for ±ω_G together has dimension 4 (2 for each sign), and L(ξ) annihilates all of it (check 2).
+- At three random rational covectors away from the crossing (check 6): the G-branch eigenspace has dimension 4 (±ω_G together) and the light-branch eigenspace has dimension 8 (±|ξ| together). Both lie in ker L, so together they span the 12-dimensional ker L, and P is diagonalisable there. This is regression evidence at sample covectors, not a proof for every ξ.
 
-The theorem rules out all three *together*. Systems whose principal symbol has real eigenvalues but too few eigenvectors are called *weakly hyperbolic*, and their behaviour is well studied.
+So the relevant eigenspaces lie inside the principal constraint kernel, and these modes are not merely constraint-violating modes of this reduction. That is a statement about the principal symbol. Their physical interpretation is a separate question (Part C), and no variable-coefficient mode construction is claimed.
 
-- The ADM formulation of Einstein's equations is the textbook example. It is only weakly hyperbolic, and numerical relativity learned to avoid it for that reason ([Sarbach et al., gr-qc/0205064](https://arxiv.org/abs/gr-qc/0205064)).
-- Weakly hyperbolic systems may still be well posed, but only under very restrictive conditions on their lower-order terms. Following Kreiss and Ortiz (2002), they can show catastrophic exponential growth once lower-order terms or variable coefficients are added.
+### A3. Characteristic speeds [NEW · exact · unaudited, derived from A1]
 
-**[CONJECTURE A: derivative loss].** Solutions exist and are unique, so (E) and (U) hold, but they lose one derivative: the bound (B) fails and is replaced by ‖Φ(t)‖_{L²} ≲ ‖Φ₀‖_{H¹}. This is what a single J₂ block does in the constant-coefficient model, where solutions grow like 1 + |ξ|t.
+- **Phase speeds.** For a unit covector, the eigenvalues give directional characteristic phase speeds:
+  - light branch: 1;
+  - constraint quotient: π′ = 1/2;
+  - G-branch: ω_G, which lies between v₁ ≈ 0.4468 (along S²(1)) and v₃ ≈ 1.0162 (along S²(3)).
 
-**[CONJECTURE B: worse, if a Levi condition fails].** Whether Conjecture A holds is decided by the **lower-order terms acting on the generalised eigenspace**, a Levi-type condition in the sense of Ivriĭ–Petkov. If that condition fails, even C^∞ well-posedness is lost and only Gevrey classes survive.
+  At π′ = 1/2 the largest phase speed over all branches and all directions is therefore v₃. The G-branch has phase speed above 1 exactly when (v₁² − 1)|ξ_a|² + (v₃² − 1)|ξ_b|² > 0.
+- **Group velocity.** The G-branch is ellipsoidal. Its group velocity ∇_ξ ω_G = Dξ/ω_G, with D = diag(v₁², v₁², v₃², v₃²), reaches magnitude v₃ > 1 for ξ along S²(3).
+- **What "faster than light" means here, and what it does not.** On this page it means only that the G-branch phase speed, and its geometric-optics group speed, exceed 1 in some directions.
 
-**The good news: this is a finite computation.** Every ingredient is explicit in this repository: the lower-order terms of K′ come from known connection, potential and mass terms, and v and w are exact. Evaluating the Levi-type quantity at (y₀, ξ\*) is a natural next step, and would turn Conjectures A and B into a theorem one way or the other.
+  This is a statement about the principal symbol. It is not a statement about the actual propagation of signals or about domains of dependence for this system. At the witness crossing, the constrained Jordan chain supplies a principal-symbol obstruction, and the theorem establishes the resulting failure of the specified loss-free well-posedness package. The usual link between characteristic speeds and domains of dependence is therefore not available here. No causality claim is made.
 
-## 3. Is it the theory, or just this formulation?
+### A4. The crossing cone, and where the witness sits [NEW · exact · unaudited; PROJECT RECORD]
 
-A fair challenge to any ill-posedness result is that another formulation might avoid it. Numerical relativity escaped ADM's weak hyperbolicity by reformulating, with BSSN and generalised harmonic gauge.
+Subtracting the light branch from A1 gives
 
-- **[ESTABLISHED in the paper, this family only]** The formulation here has a free constraint-addition parameter π′. Adding multiples of the constraint is the standard trick for repairing hyperbolicity. The paper (frozen candidate, Proposition 5.1) proves P_{π′} − P_{π″} = (π′ − π″)M⁻¹TL, which vanishes on ker L, so the principal symbol restricted to ker L, and the Jordan chain, are the same for every π′. This was first seen here for the tested values 0, 1/2, 2 and −3/7. It is independence within this one family of constraint additions, not formulation independence in general.
-- **[CONJECTURE C, now settled for this family]** No constraint addition of this type removes the obstruction, because it lives entirely on constraint-satisfying directions, where constraint addition acts trivially. For the π′ family this is the result just stated. Other kinds of reformulation remain open.
-- **[SPECULATION]** Reformulations that change the *field content* are a different matter: auxiliary fields, as in Porrati–Rahman, or Stückelberg fields. Section 5 comes back to this.
+  ω_G² − |ξ|² = (v₁² − 1)|ξ_a|² + (v₃² − 1)|ξ_b|².
 
-## 4. How special is the witness point?
+The G-branch meets the light branch exactly on the cone 𝒳 where this vanishes. Since v₁² − 1 < 0 < v₃² − 1, in the punctured cotangent space ξ ≠ 0 the set 𝒳 is a smooth codimension-one conic hypersurface; its closure includes the vertex at zero. The witness covector ξ\* = (20/99, 0, 1, 0) lies on 𝒳 exactly (check 3).
 
-- **[ESTABLISHED]** The exact pattern, algebraic multiplicity 6 with two J₂ blocks, belongs to the **Pauli slice** q = λ√(2/3)·m. Off the slice, exploratory computations at the tested values find that the degenerate double pair splits, and the crossing moves to nested-radical points.
-- **[CONJECTURE D: persistence].** The *proof* needs only one Jordan chain of length 2 inside ker L. The project's earlier defect formula predicts at most a defect of 1 at the shifted crossings; that prediction has not been checked. If any defect survives, the same argument goes through off the slice too.
-  - In that case loss-free L² well-posedness would fail on an open set of parameters, wherever the G-sheet is superluminal in some directions and subluminal in others, not just at one point.
-  - This is the most consequential open computation.
-- **[SPECULATION]** Picture the parameter space divided by the sign pattern of (v₁² − 1, v₃² − 1):
-  - both negative: everything subluminal, no crossing, possibly well-posed;
-  - both positive: superluminal, but with no transversal crossing;
-  - **mixed signs**: crossings, and Jordan blocks on the light cone.
+So at ξ\* the two branches coincide: r = 101/99 = |ξ\*|, with algebraic multiplicity 4 + 2 = 6 for each sign, as in the paper's Table 1.
 
-  A phase diagram of this kind would echo the mass–cosmological-constant diagrams that Deser and Waldron drew for spin-3/2 causality.
+**A crossing alone does not give a Jordan block.** The project's earlier records separate the two conditions:
 
-## 5. What this might say about physics
+- **[PROJECT RECORD]** GEN9 Corollary L2.3: on the Pauli slice, P restricted to ker L has a real eigenvalue crossing between the light branch and the G-branch exactly on 𝒳. 𝒳 is a real codimension-1 cone exactly when (v₁² − 1)(v₃² − 1) < 0, a transversal crossing. Recorded status: ESTABLISHED given GEN9's Lemma L2.1.
+- **[PROJECT RECORD]** GEN9 Theorem L3.1: on 27 tested parameter slices, the restricted operator has defect exactly 2 at **every** crossing point. Exact computation per slice; status ESTABLISHED per slice.
+- **[PROJECT RECORD]** GEN9 Theorem L3.2: on the coincident stratum β = 1 (six tested values), v₁² = v₃² = 1. The G-branch then equals the light branch for every ξ, and the defect is **0**. Status: ESTABLISHED per slice.
+- The tested records associate the defect with transversal crossings **and** a model-specific coupling. These finite records do not establish a universal necessity statement over every parameter choice. GEN9 interprets this coupling as a "forward coupling" from the light branch to the G-branch, of rank 2 at the crossing, but records that interpretation only as SUPPORTED. The sign condition guarantees that the branches intersect. It does not by itself make the symbol defective there.
 
-**What is known.** In N = 2 supergravity, a massive gravitino charged under the graviphoton propagates consistently. That consistency is an important exception to the general difficulty of charged higher spins ([Rahman, 1111.3366](https://arxiv.org/abs/1111.3366); [Porrati–Rahman, 0906.1432](https://arxiv.org/abs/0906.1432)).
+These are AI-only results of this project, recorded in `GEN9/G9_THEORY_UPGRADE.md` in the private archive. They are not part of the paper.
+
+### A5. Constraint additions [PAPER; PROJECT RECORD]
+
+- **[PAPER, Prop. 5.1(a)]** For the one-parameter family of constraint additions π′: P_{π′} − P_{π″} = (π′ − π″)M⁻¹TL, which vanishes on ker L. So P restricted to ker L, and the Jordan chain, are the same for every π′. (`outlook_checks.py` check 4 is a regression test of this at four values.)
+- **[PROJECT RECORD]** GEN9 Proposition L5.1 extends the same elementary argument to any symbol-level reduction P_h = P − A⁻¹BL with A invertible: it agrees with P on ker L, so it keeps the Jordan chain. Recorded status: ESTABLISHED (elementary).
+- **Open question.** Reformulations that change the variables or field content, such as keeping ψ₀ dynamical, Stückelberg fields, auxiliary fields or other gauges, are not covered. The defect is unchanged under the constraint additions and symbol-level reductions explicitly described above. No claim is made for the other reformulations just listed.
+
+### A6. The coefficient in the Pauli term [PROJECT RECORD]
+
+The mass/Pauli term has the form X_A = −(m/3)Γ_A + λc₁(F̸Γ_A − α Γ_A F̸). Within this ansatz, the Clifford intertwining identity used in the reduction holds in five dimensions at α = 1/3, the value used here.
+
+This is a Clifford compatibility identity, used in the paper in five dimensions only. **[PROJECT RECORD, not verified here]** For the same ansatz in other dimensions d, the project's errata register (G-67) records α = (d − 4)/(d − 2). That value came from ChatGPT's blind derivation in GEN14 (V1), and it corrected an earlier, wrong remark. The written proof in the record (GEN14 V4) covers d = 5 only. The general-d formula has not been re-derived or checked for this page, the record does not state its exact dimensional scope or exceptional cases (for example, it is undefined at d = 2), and nothing here uses it. The project's notes compare this structure with the gravitino Pauli term in supergravity (cf. Deser–Waldron, eq. 15), but that comparison has not been derived in detail. Selecting a coefficient within a restricted ansatz is **not** a characterisation of supergravity.
+
+---
+
+## Part B. Mathematical conjectures
+
+The theorem rules out existence, uniqueness and the loss-free bound **together**. Systems whose principal symbol has real eigenvalues but too few eigenvectors are called *weakly hyperbolic*. The ADM formulation of Einstein's equations is the textbook example ([Sarbach et al., gr-qc/0205064](https://arxiv.org/abs/gr-qc/0205064)). Kreiss and Ortiz (2002) show that such systems can be very sensitive to lower-order terms and variable coefficients.
+
+### B1. [RESEARCH QUESTION A: well-posedness with derivative loss]
+
+The system may admit existence, uniqueness and continuous dependence in a shifted Sobolev scale, with an estimate of the form
+
+  ‖Φ(t)‖_{H^s} ≤ C_t ‖Φ₀‖_{H^{s+1}}.
+
+This would be a weaker well-posedness statement than the package excluded by the theorem. It does **not** imply that property (E), as defined in the paper, holds, and an estimate alone would not establish existence or uniqueness.
+
+- **To become a precise conjecture, it needs:** the data class (constrained H^{s+1} data), the solution class, the admissible s, the spatial domains (shrinking geodesic balls, as in the theorem) and the time interval.
+- **Motivation.** In the frozen constant-coefficient model, a single J₂ block makes solutions grow like 1 + |ξ|t, a loss of one derivative. That motivates the conjecture. It does not prove it for the variable-coefficient constrained system.
+
+### B2. [RESEARCH QUESTION B: a stronger obstruction]
+
+This is an alternative scenario, not yet a definite proposition with explicit quantifiers. Lower-order terms acting on the generalised eigenspace could make things worse than a loss of one derivative, for example C^∞ ill-posedness.
+
+- Computing the lower-order couplings near the defective characteristic set may help identify an applicable Levi-type criterion.
+- A conclusion about Sobolev loss, smooth ill-posedness or Gevrey well-posedness requires a theorem whose hypotheses are verified for this system. Before any decisive claim, one must name the precise condition, the theorem connecting it to a conclusion, its multiplicity and regularity assumptions, and its neighbourhood or microlocal hypotheses, and say which of these have actually been checked.
+- Failure of a proposed Levi condition would not by itself establish well-posedness in some Gevrey class.
+- Scenarios A and B are **not** shown to exhaust the possibilities.
+
+### B3. [CONJECTURE D: persistence away from the witness]
+
+- **[ESTABLISHED AT THE WITNESS]** The stated Jordan pattern (algebraic multiplicity 6, two J₂ blocks) occurs at the selected parameter point on the Pauli slice q = λ√(2/3)·m.
+- **[PROJECT RECORD]** GEN9 Theorem L4.1 extends the obstruction, at the symbol level, to every transversal crossing point of the 27 tested Pauli-slice parameter slices. This is a codimension-1 family of parameters and covector directions, not an open set. Recorded status: SUPPORTED. It relies on an identification of the curved-operator symbol at other parameter points that was not re-run there.
+- **Off the slice [PROJECT RECORD, erratum G-66]:** exploratory computations at the tested values find that the degenerate double pair splits. Whether any Jordan defect survives at the shifted crossings is **open**.
+- **The conjecture.** A Jordan chain of length 2 inside ker L persists at transversal crossings off the slice. If so, the theorem's argument would apply there. Persistence on an **open** set of parameters would need its own argument, with appropriate crossing and defect hypotheses. One additional off-slice example would not establish it.
+
+### B4. [A numerical test]
+
+A first experiment would reproduce linear-in-frequency growth in the frozen constant-coefficient constrained model. A separate variable-coefficient experiment would test whether, on a specified time scale, localised packets near frequency Λξ\* show the same behaviour. Any such experiment must:
+
+- start from data that satisfy the constraints, and monitor constraint errors during the evolution;
+- control the initial polarisation: not every datum excites the generalised eigenvector, so the data must be chosen to do so;
+- separate discretisation and stability effects from the continuum mechanism, since grid-dependent growth alone is not diagnostic;
+- treat absence of growth away from the crossing cone 𝒳 as an additional hypothesis to test, not an established prediction.
+
+The result would be a numerical illustration or test of the proposed mechanism. Whether it is independent of this project depends on how it is implemented.
+
+---
+
+## Part C. Physical interpretations
+
+Everything in Part C is interpretation. None of it is established, and none of it is used in the theorem.
+
+### C1. [INTERPRETATION] Speed versus degeneracy
+
+The theorem holds for every contraction speed c > 0, including speeds exceeding the characteristic speeds of A3, c > v₃. So the obstruction is not removed by shrinking the domain fast enough to accommodate a larger propagation speed. That suggests the obstruction is a **degeneracy**, eigenvectors coalescing at the transversal crossing (A4), rather than a matter of speed alone.
+
+Velo and Zwanziger (1969) found characteristic speeds above light speed for the minimally coupled charged spin-3/2 field. Here a superluminal **phase speed** of one branch (A3) is what makes the crossing transversal, and the Jordan block at the crossing is what the theorem uses.
+
+### C2. [SPECULATION] Two degeneracies
+
+Deser and Waldron traced the onset of spin-3/2 acausality to a degeneracy: a gauge invariance that appears exactly at the onset ([hep-th/0112182](https://arxiv.org/abs/hep-th/0112182)). Here a different degeneracy appears exactly where the G-branch crosses the light branch. Whether these are related is an open question. Making it precise would require an explicit comparison of the two systems.
+
+### C3. Known consistent constructions [literature]
+
+- Known consistent constructions show that the outcome depends on the interaction structure and the background.
+- Porrati and Rahman construct a non-minimally coupled massive charged spin-3/2 model in a constant external electromagnetic background, in which only physical degrees of freedom propagate, inside the light cone, without adding fields ([0906.1432](https://arxiv.org/abs/0906.1432)).
+- Appropriate supergravity constructions provide known consistent realisations of a massive charged gravitino, subject to their coupling relations, background assumptions and retained field content. The literature also discusses pathologies in particular truncations; these are not interchangeable claims about every system called N = 2 supergravity (see, for example, [Rahman, 1111.3366](https://arxiv.org/abs/1111.3366)).
 - Making the metric dynamical improves the causality bounds for spin 3/2 ([Deser–Waldron](https://arxiv.org/abs/hep-th/0112182)).
-- Recent work revisits charged gravitinos on Einstein–Maxwell backgrounds and compares the supergravity and superstring realisations of a charged massive spin-3/2 particle (Krawczyk, Meissner, Nicolai and Sikorski, [2606.17139](https://arxiv.org/abs/2606.17139); Benakli, [2603.24670](https://arxiv.org/abs/2603.24670)).
+- Recent work revisits charged gravitinos on Einstein–Maxwell backgrounds, and compares supergravity and superstring realisations of a charged massive spin-3/2 particle (Krawczyk, Meissner, Nicolai and Sikorski, [2606.17139](https://arxiv.org/abs/2606.17139); Benakli, [2603.24670](https://arxiv.org/abs/2603.24670)).
+- The present obstruction concerns a **different, specified system**: a fixed background, this Pauli coupling, this formulation. It should not be generalised to every charged spin-3/2 theory on a fixed background.
 
-**The link to this work** [ESTABLISHED]. The project's divergence identity forces the Pauli coupling to the ratio familiar from supergravity. The project's notes record this as a standard mechanism, not a new result.
+### C4. [SPECULATION] Fixed backgrounds and back-reaction
 
-**[SPECULATION: frozen backgrounds are the problem].** This result fits the long-standing lore that a charged spin-3/2 field on a **fixed** background is sick even at supergravity-like couplings, and that consistency needs **back-reaction or extra fields**. Porrati and Rahman suggest causality may force other fields to exist besides the spin-3/2 one. This adds a sharper, mathematical version of the symptom: not just superluminal speeds, but the failure of a loss-free energy estimate.
-- **Test:** couple the same field to dynamical gravity and the graviphoton, as in gauged supergravity, and check whether the Jordan block survives.
+It is often suggested that a charged spin-3/2 field on a fixed background can be problematic, and that dynamical gravity changes the picture. Two different projects would test this here:
 
-**[SPECULATION: an effective-theory reading].** Well-posedness concerns arbitrarily high frequencies, and an effective field theory is not valid there. Deser, Pascalutsa and Waldron already note that loss of tree unitarity merely signals the scale at which the effective description stops being valid ([hep-th/0003011](https://arxiv.org/abs/hep-th/0003011)). A Jordan block on the light cone could be read the same way: as a high-frequency signature that new physics must take over. The open question is *at which scale*, given that the witness mass is small (m² = 823/142944) compared with the field and curvature scales of the background.
+1. **Background consistency.** Determine whether this background (a product of two spheres with magnetic flux), or a nearby one, solves an appropriate Einstein–Maxwell or supergravity background system. This has not been checked.
+2. **Dynamical coupling.** Analyse the coupled field equations, including perturbations of the metric and the gauge field, and ask whether the Jordan obstruction survives.
 
-**[SPECULATION: the background].** A product of two spheres threaded by magnetic flux resembles the flux backgrounds used in supergravity compactifications. Whether Model E, or a nearby background, solves the full Einstein–Maxwell(-sugra) equations has not been checked. If it does, the question in this section becomes concrete.
+Solving the background equations would not by itself answer the second question.
 
-## 6. A prediction a computer can test
+### C5. [SPECULATION] An effective-theory reading
 
-**[CONJECTURE E: numerical signature].** If the reduced system is discretised and initial data concentrated near frequency Λξ\* are evolved, then:
-- the amplitude should grow roughly in proportion to **1 + Λt**, the signature of a J₂ block;
-- the growth should get worse as the grid is refined, the hallmark of a weakly hyperbolic system;
-- this growth should not appear for data supported away from the crossing cone 𝒳.
+Well-posedness concerns arbitrarily high frequencies, where an effective field theory is not valid. Deser, Pascalutsa and Waldron note that loss of tree unitarity can be read as marking the scale at which an effective description stops being valid ([hep-th/0003011](https://arxiv.org/abs/hep-th/0003011)). A high-frequency obstruction like this one can motivate a similar question.
 
-This experiment is cheap. It could run on a desktop machine, and it would give an independent, physical-looking confirmation of the mechanism.
+It does not by itself identify a cutoff, show the onset of new physics, or establish an equivalence with tree-unitarity breakdown. Inferring a scale would need a quantitative calculation, for example the frequency at which the growth contemplated in B1 becomes order one for physically normalised data. Comparing m² = 823/142944 with the field and curvature scales would need explicit normalisation and coupling-dependent dimensionless ratios.
 
-## 7. Next steps, roughly in order of value
+### C6. [SPECULATION] A phase diagram
 
-1. **Levi-type condition at (y₀, ξ\*):** settles Conjecture A versus B. Finite and exact.
-2. **Defect at the off-slice crossings:** settles Conjecture D, and whether the obstruction is generic.
-3. **The numerical experiment** of §6.
-4. **Map the sign pattern** of (v₁² − 1, v₃² − 1) over parameter space (§4).
-5. **Dynamical coupling** (§5): does back-reaction remove the block?
-6. **Lean formalisation** of the witness algebra and of the new checks on this page.
-7. **Human expert review** of the proof, which matters more than any of the above.
+One could divide parameter space by the signs of (v₁² − 1, v₃² − 1):
+- both negative: the G-branch is slower than light in every direction, and there is no crossing;
+- both positive: the G-branch is faster than light in every direction, and there is again no transversal crossing;
+- mixed signs: a transversal crossing exists, and by A4 a Jordan block is possible there, though not guaranteed.
+
+Whether well-posedness behaves accordingly in each region is entirely open. A map of this kind would echo the mass–cosmological-constant diagrams that Deser and Waldron drew for spin-3/2 causality.
+
+---
+
+## Next steps
+
+These are listed roughly by value. None of them is expected to settle a question on its own; each says what it would add.
+
+1. **Human expert review** of the proof. This matters more than anything below.
+2. **Lower-order couplings near the defective set** (B1, B2): identify which Levi-type criterion, if any, applies, and check its hypotheses.
+3. **The defect at off-slice crossings** (B3).
+4. **The numerical tests** of B4, constant-coefficient first.
+5. **The sign map** of (v₁² − 1, v₃² − 1) over parameter space (C6), from the formula in A1 at other parameter points.
+6. **Background consistency and dynamical coupling** (C4), as two separate projects.
+7. **Lean formalisation** of the witness algebra and of the checks in Part A.
 
 If you work on any of these, or know where they are already answered in the literature, please open an issue.
 
 ---
 
-*Written with AI assistance (Claude), directed by the project owner. The exact checks for §1 and §3 are in [`scripts/outlook_checks.py`](scripts/outlook_checks.py). Everything labelled CONJECTURE or SPECULATION is exactly that.*
+*Written with AI assistance (Claude), directed by the project owner. Revised in v1.0.5 after a documentation review by Perplexity (two rounds); see CHANGELOG. The exact checks for Part A are in [`scripts/outlook_checks.py`](scripts/outlook_checks.py). Items labelled CONJECTURE, INTERPRETATION or SPECULATION are exactly that.*

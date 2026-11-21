@@ -1,5 +1,38 @@
 # Changelog
 
+## 1.0.5 (2026-11-21)
+Documentation and one added check. No proof script, data or results file changed. OUTLOOK.md was revised after a documentation review of OUTLOOK by Perplexity (source-page level; it did not run the script). The frozen paper candidate is untouched.
+- OUTLOOK.md was reorganised into A (additional exact algebraic claims), B (mathematical conjectures) and C (physical interpretations), with a status label and specific support for each item.
+- **New exact result (A1):** the full dispersion relation for a symbolic covector, det(x − P(ξ)) = (x² − v₁²|ξ_a|² − v₃²|ξ_b|²)²(x² − |ξ|²)⁴(x² − |ξ|²/4)², with multiplicities, and the crossing cone obtained by subtracting the light branch. Added to `scripts/outlook_checks.py` (check 5), together with eigenspace dimensions and ker L membership at random covectors (check 6, regression only).
+- Corrected or narrowed:
+  - "physical directions" is no longer inferred from ker L membership;
+  - phase speed is now distinguished from group velocity and signal propagation;
+  - the reversed "wider cones" wording is replaced by "contraction speed";
+  - "the fastest characteristic" is now supported by A1;
+  - Conjecture A no longer claims that (E) holds and is restated in a shifted Sobolev scale;
+  - the claim that a finite Levi-type test is decisive is removed;
+  - the Porrati–Rahman description is corrected (their model needs no additional fields);
+  - the Pauli-slice "ESTABLISHED" label is narrowed to the witness;
+  - the open-set claim is removed;
+  - GEN9 results (L2.3, L3.1, L3.2, L4.1, L5.1) are given with their statements and recorded statuses;
+  - the supergravity-ratio remark is restated as a Clifford compatibility identity (α = 1/3 in 5D, cf. G-67), not a characterisation of supergravity;
+  - the numerical proposal is now a test with stated controls;
+  - the EFT reading is explicitly limited;
+  - background consistency is separated from dynamical coupling;
+  - Conjecture C is replaced by the established π′ result plus an open question.
+- README: the pointer to OUTLOOK describes the new observations as principal-symbol statements.
+- Second-round follow-up from the same review, applied before release:
+  - the opening review status now says this page had a documentation and scope review, and that its computations, records and conclusions have not been independently verified; PAPER items are distinguished from the additional claims;
+  - the quotient branch ±|ξ|/2 is identified by its quotient origin only, since v₁ < 1/2 < v₃ means it coincides with the G-branch in some directions;
+  - 𝒳 is described as a smooth conic hypersurface in ξ ≠ 0;
+  - "the defect needs" is replaced by "the tested records associate";
+  - B1 and B2 are relabelled as research questions;
+  - the general-dimension Pauli coefficient is kept as an unverified project record, with its source and limits;
+  - "that is the theorem" is replaced by the package-failure wording;
+  - the supergravity summary is qualified by model, background and field content.
+- Final reference-clarity edit in A5 (third round): "The defect is unchanged under the constraint additions and symbol-level reductions explicitly described above. No claim is made for the other reformulations just listed."
+- The reviewer's disposition: "The revised OUTLOOK is appropriately qualified as a research outlook. The specific scope and reasoning objections raised in this documentation review have been addressed. Its additional symbolic identities, computational claims, and private project records remain unverified in this review." This is not verification of A1–A6, not execution of outlook_checks.py, and not certification of the mathematical conclusions. This version is preserved for the planned full review.
+
 ## 1.0.4 (2026-11-21)
 Documentation only. No code, data or results file changed. The README and related pages were brought in line with the frozen paper candidate, following a documentation review by Perplexity.
 - README:
