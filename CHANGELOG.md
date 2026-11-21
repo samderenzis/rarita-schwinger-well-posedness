@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.0.6 (2026-11-21)
+Documentation only. No code, data or results file changed; the frozen paper candidate is untouched.
+- Added ROADMAP.md: a research plan, adapted from a planning suggestion by Perplexity, with references to this project's scripts and records. It covers:
+  - priority order: secure the existing result; is the witness isolated?; severity; rewritings versus repairs; a positive regime; geometry; numerics; physics as separate projects;
+  - evidence labels;
+  - a bounded plan for the next question: the defect at off-Pauli-slice crossings near the witness, with what is reused, what is missing, the certificates needed, success and failure criteria, and what it would not establish.
+- README: links to ROADMAP.md. The OUTLOOK pointer now says OUTLOOK had a documentation and scope review only and is not independently verified (it previously said "not assessed in any review", which was out of date after v1.0.5).
+- OUTLOOK.md: the Next steps section links to ROADMAP.md.
+- ROADMAP revised before release, after Perplexity's review of the draft (8 points):
+  - evidence categories are no longer presented as a ladder;
+  - the off-slice question no longer presupposes the on-slice branch structure, and gives a five-step sequence;
+  - the negative outcome is limited to the tested crossings, with "no crossing found" reported separately;
+  - Milestone 1 (one exact off-slice witness, hypotheses re-checked) is separated from Milestone 2 (a family argument);
+  - reusable scope is stated accurately: witness_min.py and bhmap_defs.py hard-wire the Pauli slice; the π′ factorisation must be re-verified along the family; pointwise versus uniform coercivity;
+  - the S^ρ-constancy explanation is tied to the parallel-field and product-geometry properties;
+  - the §6 criterion must say what it adds beyond the existing necessity lemma.
+
+  The links were checked and are relative repository links. Adopted as the working plan.
+- Final housekeeping from the reviewer's disposition: "no crossing found" is reworded as "the search did not locate a real crossing…", with no exclusion claimed without an exact argument. The reviewer accepted the roadmap as a coherent research plan. This is not confirmation of the script-inspection findings, the private records, or any new result.
+
 ## 1.0.5 (2026-11-21)
 Documentation and one added check. No proof script, data or results file changed. OUTLOOK.md was revised after a documentation review of OUTLOOK by Perplexity (source-page level; it did not run the script). The frozen paper candidate is untouched.
 - OUTLOOK.md was reorganised into A (additional exact algebraic claims), B (mathematical conjectures) and C (physical interpretations), with a status label and specific support for each item.

@@ -190,7 +190,7 @@ Whether well-posedness behaves accordingly in each region is entirely open. A ma
 
 ## Next steps
 
-These are listed roughly by value. None of them is expected to settle a question on its own; each says what it would add.
+A fuller research plan, with priorities and success criteria, is in [ROADMAP.md](ROADMAP.md). These are listed roughly by value. None of them is expected to settle a question on its own; each says what it would add.
 
 1. **Human expert review** of the proof. This matters more than anything below.
 2. **Lower-order couplings near the defective set** (B1, B2): identify which Levi-type criterion, if any, applies, and check its hypotheses.
