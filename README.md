@@ -16,6 +16,20 @@ For a charged, massive spin-3/2 (Rarita–Schwinger) field with Pauli coupling, 
 
 📄 **Paper:** in preparation · 🔖 **DOI:** [10.5281/zenodo.24413648](https://doi.org/10.5281/zenodo.24413648)
 
+## In plain terms
+
+A physical field equation is only useful for prediction if, given the state of the field now, it determines the future: a solution must **exist**, it must be **unique**, and small changes now must cause only controlled changes later (an **energy bound**). Mathematicians call this *well-posedness*.
+
+This work examines one of physics' notoriously awkward fields, the field of a massive, electrically charged particle of spin 3/2, in a carefully chosen curved space with a magnetic field. It shows that, at one explicit choice of the parameters, the equations **cannot have all three properties at once** in their strongest form. The reason is a hidden degeneracy, a *Jordan block*, in the way waves move through the equations. Picture two wave modes locked together, so that one keeps feeding the other. The resulting growth cannot be controlled by any energy bound that loses no derivatives.
+
+The degeneracy is written down exactly: it involves only fractions and the imaginary unit, with no rounding. Anyone can check it in seconds (see [Check it yourself](#check-it-yourself)).
+
+## Why this question
+
+Charged spin-3/2 fields have been a known trouble spot since **Velo and Zwanziger (1969)**. They showed that the simplest coupling of such a field to an electromagnetic field lets signals travel faster than light. Modified equations have been proposed ever since, for example by **Khalil (1977)**. The phenomenon has been re-examined many times since, for instance by **Frauendiener (2003)**. A natural modification adds a *Pauli coupling* (a direct interaction with the field strength). This work asks a sharper, purely mathematical question about such a Pauli-coupled theory: is its initial-value problem well-posed in the standard L² sense, on a fixed curved background?
+
+The tools come from the theory of hyperbolic equations. Necessary conditions of this kind, where degenerate characteristics rule out well-posedness, go back to **Ivriĭ and Petkov (1974)**, with a modern L² treatment by **Métivier (2014)**. The constrained setting connects to **Abalos and Reula (2020)**.
+
 ## Main theorem (informal statement)
 
 > There is r\* ∈ (0, π/6] such that for every R ∈ (0, r\*/2), every integer ℓ ≥ 2, every c > 0 and every T ∈ (0, R/c), no constants K ≥ 1, α ≥ 0 make the following hold together on the backward light cones B_t = B_d(y₀, R − ct):
@@ -39,6 +53,22 @@ so any loss-free bound would give $|v| \le (1+K)\,\gamma\,|w|$ for all γ > 0, w
 
 The exact v, w, P, L and det S⁰ = 3063716808343140625 / 132101812606622109696 are in [`data/`](data/), readable without running anything.
 
+## The proof at a glance
+
+```mermaid
+flowchart LR
+    L0["L0 · Algebraic reduction<br/>divergence identity, constraint elimination"] --> L1["L1 · Transfer<br/>original ⇄ reduced problem"]
+    L1 --> L5
+    L1 --> L2["L2 · Energy estimate<br/>from the well-posedness package"]
+    L3["L3 · Local coercivity"] --> L5
+    L2 --> L5["L5 · Application<br/>small balls, function class"]
+    L4["L4 · Necessity lemma<br/>oscillatory H⁻¹ estimate"] --> L5
+    L6["L6 · Witness<br/>Jordan chain at r = 101/99"] --> C(["Contradiction:<br/>(E), (U), (B) cannot all hold"])
+    L5 --> C
+```
+
+How each link was checked, with blind derivations, audits, exact computation and re-execution, is in [HOW_IT_WAS_CHECKED.md](HOW_IT_WAS_CHECKED.md).
+
 ## Check it yourself
 
 Three levels, from no software at all to full re-computation:
@@ -46,6 +76,15 @@ Three levels, from no software at all to full re-computation:
 1. **Read the certificate.** Open [`data/witness.txt`](data/witness.txt) and verify the four witness relations above by hand or with any computer algebra system. Or run the standard-library-only checker (no installs needed):
    ```bash
    python data/read_witness.py      # uses only Python's built-in fractions module
+   ```
+   It finishes in about a second and prints:
+   ```
+   L v = 0        True
+   L w = 0        True
+   (P - r) v = 0  True
+   (P - r) w = v  True
+   v != 0         True
+   ALL WITNESS RELATIONS HOLD
    ```
 2. **Run the proof scripts** (a few minutes):
    ```bash
@@ -103,6 +142,27 @@ This is **AI-collaborative research**. The project owner defined the programme, 
 - ⚠️ The scope is narrow: one background, one parameter point, the Pauli slice. It rules out the three properties *together* and does not say which one fails. It makes no physical claims.
 
 Feedback, especially from specialists in hyperbolic PDE and higher-spin fields, is very welcome.
+
+## Open questions
+
+These are open, and contributions or pointers to the literature are welcome:
+- **Which property fails?** The theorem rules out existence, uniqueness and the loss-free bound *together*. Which one actually breaks is not decided.
+- **Off the Pauli slice.** Away from this slice, exploratory computations at the tested parameter values find that the degenerate double eigenvalue splits. The Jordan pattern found here appears specific to the slice, and the behaviour at the crossings off the slice is open.
+- **Other parameter points and backgrounds.** The witness is one exact point on one background.
+- **Weaker notions of well-posedness**, such as C^∞ or Gevrey, at the witness point.
+- **A local-domain version of the key H⁻¹ estimate** (Lemma 4.1).
+- **Formal verification.** A Lean check of the witness algebra is planned.
+
+## Key references
+
+- G. Velo, D. Zwanziger, *Propagation and quantization of Rarita–Schwinger waves in an external electromagnetic potential*, Phys. Rev. **186** (1969) 1337. [doi:10.1103/PhysRev.186.1337](https://doi.org/10.1103/PhysRev.186.1337)
+- M. A. K. Khalil, *Relativistic wave equations without the Velo–Zwanziger pathology*, Prog. Theor. Phys. **58** (1977) 1538. [doi:10.1143/PTP.58.1538](https://doi.org/10.1143/PTP.58.1538)
+- V. Ya. Ivriĭ, V. M. Petkov, *Necessary conditions for the Cauchy problem for non-strictly hyperbolic equations to be well-posed*, Russ. Math. Surveys **29**(5) (1974) 1. [doi:10.1070/RM1974v029n05ABEH001295](https://doi.org/10.1070/RM1974v029n05ABEH001295)
+- J. Frauendiener, *On the Velo–Zwanziger phenomenon*, J. Phys. A **36** (2003) 8433. [doi:10.1088/0305-4470/36/31/306](https://doi.org/10.1088/0305-4470/36/31/306)
+- G. Métivier, *L² well-posed Cauchy problems and symmetrizability of first order systems*, J. Éc. polytech. Math. **1** (2014) 39. [doi:10.5802/jep.3](https://doi.org/10.5802/jep.3)
+- F. Abalos, O. Reula, *On necessary and sufficient conditions for strong hyperbolicity in systems with constraints*, Class. Quantum Grav. **37** (2020) 185012. [doi:10.1088/1361-6382/ab954c](https://doi.org/10.1088/1361-6382/ab954c)
+
+Each reference is checked automatically by the validator (check G1): the DOI resolves on Crossref, and the year, volume and first page match.
 
 ## Repository contents
 
