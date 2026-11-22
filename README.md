@@ -246,7 +246,11 @@ Each reference is checked automatically by the validator (check G1): the DOI res
 
 ## Citation
 
-Use GitHub's **"Cite this repository"** button (from `CITATION.cff`), or cite the Zenodo archive: [doi:10.5281/zenodo.24413648](https://doi.org/10.5281/zenodo.24413648). This DOI always resolves to the latest version; Zenodo also lists a DOI for each individual release.
+To cite the **paper**:
+
+> S. DeRenzis, *A Jordan-block obstruction to L² well-posedness for charged spin-3/2 fields*, version 2, rxiVerse:2611.0051 (2026). https://rxiverse.org/abs/2611.0051
+
+To cite the **code and data**, use GitHub's **"Cite this repository"** button (from `CITATION.cff`), or cite the Zenodo archive: [doi:10.5281/zenodo.24413648](https://doi.org/10.5281/zenodo.24413648). This DOI always resolves to the latest version; Zenodo also lists a DOI for each individual release.
 
 ## License
 

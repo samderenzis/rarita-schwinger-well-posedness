@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+Documentation only.
+- README: the Citation section now gives a reference for the paper (rxiVerse:2611.0051), as well as the existing one for the code and data.
+
 ## 1.0.10 (2026-11-22)
 Documentation only. No paper, code, data or results file changed.
 - The paper (version 2, the same PDF) is posted on rxiVerse as [2611.0051](https://rxiverse.org/abs/2611.0051). README, paper/README.md and CITATION.cff link to it.
