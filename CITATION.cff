@@ -16,7 +16,7 @@ identifiers:
     description: "Paper version 2 on rxiVerse"
 repository-code: "https://github.com/samderenzis/rarita-schwinger-well-posedness"
 license: MIT
-version: "1.0.10"
+version: "1.0.11"
 date-released: "2026-11-22"
 keywords:
   - mathematical physics

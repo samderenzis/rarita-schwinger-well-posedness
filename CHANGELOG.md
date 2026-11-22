@@ -1,7 +1,7 @@
 # Changelog
 
-## Unreleased
-Documentation only.
+## 1.0.11 (2026-11-22)
+Documentation only. No paper, code, data or results file changed.
 - README: the Citation section now gives a reference for the paper (rxiVerse:2611.0051), as well as the existing one for the code and data.
 
 ## 1.0.10 (2026-11-22)
