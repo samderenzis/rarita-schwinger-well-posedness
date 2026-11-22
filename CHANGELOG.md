@@ -1,7 +1,8 @@
 # Changelog
 
-## Unreleased (to become 1.0.10)
+## 1.0.10 (2026-11-22)
 Documentation only. No paper, code, data or results file changed.
+- The paper (version 2, the same PDF) is posted on rxiVerse as [2611.0051](https://rxiverse.org/abs/2611.0051). README, paper/README.md and CITATION.cff link to it.
 - README and ROADMAP link to the follow-up repository [rarita-schwinger-off-slice](https://github.com/samderenzis/rarita-schwinger-off-slice), which holds the exploratory work on ROADMAP §2. Nothing there is part of this result.
 - paper/README.md gains a Corrections section. It corrects an unsupported explanation in paper/CHANGES_v2.md about a PDF hash in an internal, unpublished package. That package was internally consistent; the differing hash came from an erroneous report in an AI review. CHANGES_v2.md itself is unchanged.
 

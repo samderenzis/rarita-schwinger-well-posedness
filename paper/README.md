@@ -37,7 +37,7 @@ They are also listed in the repository's [`SHA256SUMS`](../SHA256SUMS).
 
 ## Versions
 
-- **Version 2 (this one)** is the paper's first public version. Version 1 was an internal frozen candidate. It went through the reviews described in [HOW_IT_WAS_CHECKED.md](../HOW_IT_WAS_CHECKED.md) and was not posted.
+- **Version 2 (this one)** is the paper's first public version. The same PDF is also posted on rxiVerse as [2611.0051](https://rxiverse.org/abs/2611.0051). Version 1 was an internal frozen candidate. It went through the reviews described in [HOW_IT_WAS_CHECKED.md](../HOW_IT_WAS_CHECKED.md) and was not posted.
 - The paper's version number is separate from the repository's. Version 2 of the paper was added in repository release **v1.0.9**. The code and data it cites are those of release **v1.0.8**, which are unchanged in v1.0.9.
 - Any later correction will be a new paper version with its own change log. Posted versions are not edited.
 

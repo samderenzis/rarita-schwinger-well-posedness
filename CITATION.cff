@@ -11,10 +11,13 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.24413648"
     description: "Zenodo concept DOI (all versions)"
+  - type: url
+    value: "https://rxiverse.org/abs/2611.0051"
+    description: "Paper version 2 on rxiVerse"
 repository-code: "https://github.com/samderenzis/rarita-schwinger-well-posedness"
 license: MIT
-version: "1.0.9"
-date-released: "2026-11-21"
+version: "1.0.10"
+date-released: "2026-11-22"
 keywords:
   - mathematical physics
   - Rarita-Schwinger
