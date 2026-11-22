@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased (to become 1.0.10)
+Documentation only. No paper, code, data or results file changed.
+- README and ROADMAP link to the follow-up repository [rarita-schwinger-off-slice](https://github.com/samderenzis/rarita-schwinger-off-slice), which holds the exploratory work on ROADMAP §2. Nothing there is part of this result.
+- paper/README.md gains a Corrections section. It corrects an unsupported explanation in paper/CHANGES_v2.md about a PDF hash in an internal, unpublished package. That package was internally consistent; the differing hash came from an erroneous report in an AI review. CHANGES_v2.md itself is unchanged.
+
 ## 1.0.9 (2026-11-21)
 Adds the paper. No code, data or results file changed.
 - New: `paper/` holds paper version 2, which is the release candidate after the ChatGPT review. It contains:

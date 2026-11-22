@@ -20,6 +20,8 @@ For a charged, massive spin-3/2 (Rarita–Schwinger) field with Pauli coupling, 
 
 📄 **Paper:** [version 2 (PDF)](paper/main.pdf), with its [LaTeX source](paper/) · AI-reviewed only, not peer reviewed · 🔖 **DOI:** [10.5281/zenodo.24413648](https://doi.org/10.5281/zenodo.24413648)
 
+🧭 **Follow-up work** on whether the witness is isolated ([ROADMAP §2](ROADMAP.md#2-is-the-witness-isolated-or-part-of-a-family)) is in a separate, exploratory repository: [rarita-schwinger-off-slice](https://github.com/samderenzis/rarita-schwinger-off-slice). Nothing there is part of this result.
+
 ## In plain terms
 
 A physical field equation is only useful for prediction if, given the state of the field now, it determines the future: a solution must **exist**, it must be **unique**, and small changes now must cause only controlled changes later (an **energy bound**). Mathematicians call this *well-posedness*.

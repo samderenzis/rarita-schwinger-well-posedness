@@ -41,6 +41,12 @@ They are also listed in the repository's [`SHA256SUMS`](../SHA256SUMS).
 - The paper's version number is separate from the repository's. Version 2 of the paper was added in repository release **v1.0.9**. The code and data it cites are those of release **v1.0.8**, which are unchanged in v1.0.9.
 - Any later correction will be a new paper version with its own change log. Posted versions are not edited.
 
+## Corrections
+- **CHANGES_v2.md, "Build" section.** The sentence "That is why a rebuilt PDF had a different hash from the one recorded in that package's manifest" gives an unsupported explanation.
+  - The 15:32 package it refers to was an internal, unpublished one, and it was internally consistent: its main.pdf matched its own manifest.
+  - The different hash came from an erroneous report in an AI review. Where that hash came from is unknown.
+  - The paper, its PDF and every result are unaffected. CHANGES_v2.md is left unchanged as part of the posted version.
+
 ## License
 
 The text is under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The scripts are under the [MIT License](../LICENSE).

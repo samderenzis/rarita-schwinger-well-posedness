@@ -24,7 +24,7 @@ These are different kinds of claim, not successive grades: an exact check at one
 ## Priority order
 
 1. **Secure the existing result** (§1).
-2. **Is the witness isolated?** *The next project:* determine the nearby off-slice characteristic structure, locate any crossings, and certify the constrained Jordan structure at selected exact points (§2).
+2. **Is the witness isolated?** *The next project:* determine the nearby off-slice characteristic structure, locate any crossings, and certify the constrained Jordan structure at selected exact points (§2). This work is in a separate repository, [rarita-schwinger-off-slice](https://github.com/samderenzis/rarita-schwinger-off-slice), so that this repository stays the stable record of the published result.
 3. **How severe is the failure?** Derivative loss or worse (§3).
 4. **Rewritings versus repairs**, and **a positive regime** (§4, §5).
 5. **Generalise the local mechanism** (§6).
@@ -84,6 +84,8 @@ Persistence cannot be inferred from the original defective matrix, because Jorda
 Sampled evidence and proved regions get separate labels.
 
 ### The bounded plan for the next question
+
+*This plan is carried out in [rarita-schwinger-off-slice](https://github.com/samderenzis/rarita-schwinger-off-slice) (exploratory; no results yet).*
 
 **The question.** Off the Pauli slice (q ≠ λ√(2/3)·m), near the witness: do nearby characteristic crossings exist, and does the constrained symbol (P restricted to ker L) have a nontrivial Jordan chain at any of them?
 
