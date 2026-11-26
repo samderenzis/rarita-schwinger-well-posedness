@@ -1,8 +1,9 @@
 # Changelog
 
 ## Unreleased
-Correction only. No paper, code, data or results file changed.
-- ROADMAP §2 no longer says the follow-up repository [rarita-schwinger-off-slice](https://github.com/samderenzis/rarita-schwinger-off-slice) has "no results yet". It points to that repository's README for its status, and states that its results are AI-checked only and not part of this result. Statements elsewhere that describe the off-slice question as open describe this result's scope and are unchanged.
+Documentation only. No paper, code, data or results file changed. Policy: after the release of the paper, this repository changes only by corrections and by clearly labelled pointers to later work. The paper, code, data and results never change.
+- README (Open questions), ROADMAP §2 (line 92) and OUTLOOK B3 now point to the follow-up repository [rarita-schwinger-off-slice](https://github.com/samderenzis/rarita-schwinger-off-slice) for later work. They state that its results are AI-checked only and not part of this result, that the off-slice question was open at this release, and that persistence on an open set of parameters remains open. This lets a reader coming from the paper find the later work without confusing it with the published result.
+- ROADMAP §2 no longer says the follow-up repository [rarita-schwinger-off-slice](https://github.com/samderenzis/rarita-schwinger-off-slice) has "no results yet". It points to that repository's README for its status, and states that its results are AI-checked only and not part of this result.
 
 ## 1.0.11 (2026-11-22)
 Documentation only. No paper, code, data or results file changed.

@@ -208,7 +208,7 @@ These are open, and contributions or pointers to the literature are welcome.
 **What to do next:** [ROADMAP.md](ROADMAP.md) sets out a research plan in priority order, starting with securing the existing result and then asking whether the witness is isolated or part of a family. Contributions are welcome.
 
 - **Which property fails?** The theorem rules out existence, uniqueness and the loss-free bound *together*. Which one actually breaks is not decided.
-- **Off the Pauli slice.** Away from this slice, exploratory computations at the tested parameter values find that the degenerate double eigenvalue splits. The Jordan pattern found here appears specific to the slice, and the behaviour at the crossings off the slice is open.
+- **Off the Pauli slice.** Away from this slice the degenerate double eigenvalue splits, so the exact pattern found here (two J₂ blocks at one eigenvalue) is specific to the slice. Whether Jordan defects persist at the split crossings is studied in the separate, exploratory repository [rarita-schwinger-off-slice](https://github.com/samderenzis/rarita-schwinger-off-slice). That repository reports AI-checked results along one parameter direction (the charge), which are not part of this result. Persistence on an open set of parameters is not settled.
 - **Other parameter points and backgrounds.** The witness is one exact point on one background.
 - **Weaker notions of well-posedness**, such as C^∞ or Gevrey, at the witness point.
 - **A local-domain version of the key H⁻¹ estimate** (Lemma 4.5 in the paper).

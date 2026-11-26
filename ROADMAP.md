@@ -89,7 +89,7 @@ Sampled evidence and proved regions get separate labels.
 
 **The question.** Off the Pauli slice (q ≠ λ√(2/3)·m), near the witness: do nearby characteristic crossings exist, and does the constrained symbol (P restricted to ker L) have a nontrivial Jordan chain at any of them?
 
-On the slice, the project's records report defect 2 at every crossing on 27 tested slices (GEN9, Theorem L3.1, exact per slice). Off the slice they report that the degenerate double eigenvalue splits at the tested values, and the defect question is **open** (erratum G-66). So the on-slice factorisation and branch names (light branch, G-branch) must **not** be assumed to continue off the slice.
+On the slice, the project's records report defect 2 at every crossing on 27 tested slices (GEN9, Theorem L3.1, exact per slice). Off the slice they report that the degenerate double eigenvalue splits at the tested values, and the defect question was **open** when this plan was written (erratum G-66). So the on-slice factorisation and branch names (light branch, G-branch) must **not** be assumed to continue off the slice.
 
 **Sequence.**
 1. Derive the off-slice characteristic structure: factor the characteristic polynomial of P(ξ) for symbolic ξ at nearby parameter values.
