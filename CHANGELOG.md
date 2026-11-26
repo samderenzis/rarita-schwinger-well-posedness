@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+Correction only. No paper, code, data or results file changed.
+- ROADMAP §2 no longer says the follow-up repository [rarita-schwinger-off-slice](https://github.com/samderenzis/rarita-schwinger-off-slice) has "no results yet". It points to that repository's README for its status, and states that its results are AI-checked only and not part of this result. Statements elsewhere that describe the off-slice question as open describe this result's scope and are unchanged.
+
 ## 1.0.11 (2026-11-22)
 Documentation only. No paper, code, data or results file changed.
 - README: the Citation section now gives a reference for the paper (rxiVerse:2611.0051), as well as the existing one for the code and data.

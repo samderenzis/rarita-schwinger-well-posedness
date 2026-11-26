@@ -85,7 +85,7 @@ Sampled evidence and proved regions get separate labels.
 
 ### The bounded plan for the next question
 
-*This plan is carried out in [rarita-schwinger-off-slice](https://github.com/samderenzis/rarita-schwinger-off-slice) (exploratory; no results yet).*
+*This plan is carried out in [rarita-schwinger-off-slice](https://github.com/samderenzis/rarita-schwinger-off-slice). That repository is exploratory and AI-checked only, and nothing in it is part of this result. Its README states what it has and has not established.*
 
 **The question.** Off the Pauli slice (q ≠ λ√(2/3)·m), near the witness: do nearby characteristic crossings exist, and does the constrained symbol (P restricted to ker L) have a nontrivial Jordan chain at any of them?
 
