@@ -2,6 +2,7 @@
 
 ## Unreleased
 Documentation only. No paper, code, data or results file changed. Policy: after the release of the paper, this repository changes only by corrections and by clearly labelled pointers to later work. The paper, code, data and results never change.
+- README (the follow-up line and Open questions), ROADMAP §2 and OUTLOOK B3 also point to [rarita-schwinger-off-slice-certificates](https://github.com/samderenzis/rarita-schwinger-off-slice-certificates), the second follow-up repository (2026-11-27). Its results are AI-reviewed only and not part of this result.
 - README (Open questions), ROADMAP §2 (line 92) and OUTLOOK B3 now point to the follow-up repository [rarita-schwinger-off-slice](https://github.com/samderenzis/rarita-schwinger-off-slice) for later work. They state that its results are AI-checked only and not part of this result, that the off-slice question was open at this release, and that persistence on an open set of parameters remains open. This lets a reader coming from the paper find the later work without confusing it with the published result.
 - ROADMAP §2 no longer says the follow-up repository [rarita-schwinger-off-slice](https://github.com/samderenzis/rarita-schwinger-off-slice) has "no results yet". It points to that repository's README for its status, and states that its results are AI-checked only and not part of this result.
 

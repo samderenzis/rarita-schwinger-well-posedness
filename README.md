@@ -20,7 +20,7 @@ For a charged, massive spin-3/2 (Rarita–Schwinger) field with Pauli coupling, 
 
 📄 **Paper:** [version 2 (PDF)](paper/main.pdf), with its [LaTeX source](paper/), also on [rxiVerse:2611.0051](https://rxiverse.org/abs/2611.0051) · AI-reviewed only, not peer reviewed · 🔖 **DOI:** [10.5281/zenodo.24413648](https://doi.org/10.5281/zenodo.24413648)
 
-🧭 **Follow-up work** on whether the witness is isolated ([ROADMAP §2](ROADMAP.md#2-is-the-witness-isolated-or-part-of-a-family)) is in a separate, exploratory repository: [rarita-schwinger-off-slice](https://github.com/samderenzis/rarita-schwinger-off-slice). Nothing there is part of this result.
+🧭 **Follow-up work** on whether the witness is isolated ([ROADMAP §2](ROADMAP.md#2-is-the-witness-isolated-or-part-of-a-family)) is in a separate, exploratory repository: [rarita-schwinger-off-slice](https://github.com/samderenzis/rarita-schwinger-off-slice). Nothing there is part of this result. Exact-arithmetic certificates for the off-slice symbol, with an independent verifier (AI-reviewed only), are in a second repository: [rarita-schwinger-off-slice-certificates](https://github.com/samderenzis/rarita-schwinger-off-slice-certificates).
 
 ## In plain terms
 
@@ -208,7 +208,7 @@ These are open, and contributions or pointers to the literature are welcome.
 **What to do next:** [ROADMAP.md](ROADMAP.md) sets out a research plan in priority order, starting with securing the existing result and then asking whether the witness is isolated or part of a family. Contributions are welcome.
 
 - **Which property fails?** The theorem rules out existence, uniqueness and the loss-free bound *together*. Which one actually breaks is not decided.
-- **Off the Pauli slice.** Away from this slice the degenerate double eigenvalue splits, so the exact pattern found here (two J₂ blocks at one eigenvalue) is specific to the slice. Whether Jordan defects persist at the split crossings is studied in the separate, exploratory repository [rarita-schwinger-off-slice](https://github.com/samderenzis/rarita-schwinger-off-slice). That repository reports AI-checked results along one parameter direction (the charge), which are not part of this result. Persistence on an open set of parameters is not settled.
+- **Off the Pauli slice.** Away from this slice the degenerate double eigenvalue splits, so the exact pattern found here (two J₂ blocks at one eigenvalue) is specific to the slice. Whether Jordan defects persist at the split crossings is studied in the separate, exploratory repository [rarita-schwinger-off-slice](https://github.com/samderenzis/rarita-schwinger-off-slice). That repository reports AI-checked results along one parameter direction (the charge), which are not part of this result. Independent certificates for the off-slice symbol, also AI-reviewed only, are in [rarita-schwinger-off-slice-certificates](https://github.com/samderenzis/rarita-schwinger-off-slice-certificates). Persistence on an open set of parameters is not settled.
 - **Other parameter points and backgrounds.** The witness is one exact point on one background.
 - **Weaker notions of well-posedness**, such as C^∞ or Gevrey, at the witness point.
 - **A local-domain version of the key H⁻¹ estimate** (Lemma 4.5 in the paper).
