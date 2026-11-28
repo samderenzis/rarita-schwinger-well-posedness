@@ -6,11 +6,17 @@ authors:
     given-names: "Sam"
     email: "waitandhope123@gmail.com"
 type: software
-doi: "10.5281/zenodo.24413648"
+doi: "10.5281/zenodo.24413647"
 identifiers:
   - type: doi
+    value: "10.5281/zenodo.24413647"
+    description: "Zenodo concept DOI (all versions; resolves to the latest release)"
+  - type: doi
+    value: "10.5281/zenodo.24446736"
+    description: "Zenodo DOI of release v1.0.11"
+  - type: doi
     value: "10.5281/zenodo.24413648"
-    description: "Zenodo concept DOI (all versions)"
+    description: "Zenodo DOI of release v1.0.0 (the DOI cited in the paper)"
   - type: url
     value: "https://rxiverse.org/abs/2611.0051"
     description: "Paper version 2 on rxiVerse"

@@ -5,7 +5,7 @@
 ![Status](https://img.shields.io/badge/status-paper_v2_posted_·_not_peer_reviewed-orange?style=flat-square)
 ![Validation](https://img.shields.io/badge/validation-COMPLETE__PASS-brightgreen?style=flat-square)
 ![Code license](https://img.shields.io/badge/code-MIT-blue?style=flat-square)
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.24413648-blue?style=flat-square)](https://doi.org/10.5281/zenodo.24413648)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.24413647-blue?style=flat-square)](https://doi.org/10.5281/zenodo.24413647)
 ![Text and data license](https://img.shields.io/badge/text_%26_data-CC_BY_4.0-lightgrey?style=flat-square)
 
 *`COMPLETE_PASS` is the validator's verdict on its 36 specified checks. It is not a certification of the theorem.*
@@ -18,7 +18,7 @@ For a charged, massive spin-3/2 (Rarita–Schwinger) field with Pauli coupling, 
 
 **New to the topic?** Start with [In plain terms](#in-plain-terms), then [BACKGROUND.md](BACKGROUND.md). **Specialist?** Jump to [the argument in more detail](#for-specialists-the-argument-in-more-detail) or [check the witness in one command](#check-it-yourself).
 
-📄 **Paper:** [version 2 (PDF)](paper/main.pdf), with its [LaTeX source](paper/), also on [rxiVerse:2611.0051](https://rxiverse.org/abs/2611.0051) · AI-reviewed only, not peer reviewed · 🔖 **DOI:** [10.5281/zenodo.24413648](https://doi.org/10.5281/zenodo.24413648)
+📄 **Paper:** [version 2 (PDF)](paper/main.pdf), with its [LaTeX source](paper/), also on [rxiVerse:2611.0051](https://rxiverse.org/abs/2611.0051) · AI-reviewed only, not peer reviewed · 🔖 **DOI:** [10.5281/zenodo.24413647](https://doi.org/10.5281/zenodo.24413647)
 
 🧭 **Follow-up work** on whether the witness is isolated ([ROADMAP §2](ROADMAP.md#2-is-the-witness-isolated-or-part-of-a-family)) is in a separate, exploratory repository: [rarita-schwinger-off-slice](https://github.com/samderenzis/rarita-schwinger-off-slice). Nothing there is part of this result. Exact-arithmetic certificates for the off-slice symbol, with an independent verifier (AI-reviewed only), are in a second repository: [rarita-schwinger-off-slice-certificates](https://github.com/samderenzis/rarita-schwinger-off-slice-certificates).
 
@@ -250,7 +250,7 @@ To cite the **paper**:
 
 > S. DeRenzis, *A Jordan-block obstruction to L² well-posedness for charged spin-3/2 fields*, version 2, rxiVerse:2611.0051 (2026). https://rxiverse.org/abs/2611.0051
 
-To cite the **code and data**, use GitHub's **"Cite this repository"** button (from `CITATION.cff`), or cite the Zenodo archive: [doi:10.5281/zenodo.24413648](https://doi.org/10.5281/zenodo.24413648). This DOI always resolves to the latest version; Zenodo also lists a DOI for each individual release.
+To cite the **code and data**, use GitHub's **"Cite this repository"** button (from `CITATION.cff`), or cite the Zenodo archive: [doi:10.5281/zenodo.24413647](https://doi.org/10.5281/zenodo.24413647). This concept DOI always resolves to the latest version (currently v1.0.11, [doi:10.5281/zenodo.24446736](https://doi.org/10.5281/zenodo.24446736)); Zenodo also lists a DOI for each individual release. The paper cites [doi:10.5281/zenodo.24413648](https://doi.org/10.5281/zenodo.24413648), the record of release v1.0.0.
 
 ## License
 
